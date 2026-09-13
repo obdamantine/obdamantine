@@ -1,0 +1,192 @@
+  <html>
+    <head>
+      <title>Shubhajit Dey</title>
+
+      <link
+        rel="stylesheet"
+        href="webpage_files/style.css"
+        type="text/css"
+        media="screen"
+      />
+
+      <!-- ChatGPT Modifications for tables etc. -->
+        <style>
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+            }
+            th, td {
+                  border-bottom: collapse;
+                  padding: 1.5px;
+                  text-align: left;
+                  font-weight: 300;
+            }
+            th {
+                  background-color: #f2f2f2;
+            }
+            td:last-child {
+                  text-align: left;
+            }
+        </style>
+        <style>
+            .line-with-text-container {
+              display: flex;
+              align-items: center; /* Vertically aligns the text and line parts */
+              margin: 0 1px; /* Adds some space above and below the whole thing */
+              }
+
+            .line-with-text-container::before,
+            .line-with-text-container::after {
+              content: '';
+              flex-grow: 1; /* Allows the lines to take up available space */
+              background-color: white; /* Line color */
+              height: 1px; /* Thickness of the line */
+              }
+
+            .line-text {
+              padding: 0 2px; /* Space between the text and the start/end of the line segments */
+              /* font-size: 16px; Adjust text size as needed */
+              /* color: #333;  Text color */
+              }
+        </style>
+    </head>
+
+    <body>
+      <div id="header">
+        <p>
+          <a href="index.html"> home </a> &emsp; &emsp;
+          <a href="research cover.html"> research </a> &emsp; &emsp;
+          <a href="teaching.html"> teaching </a> &emsp; &emsp;
+          <a href="about.html"> bio </a> &emsp; &emsp;
+          <a href="resources.html"> resources </a> &emsp; &emsp;
+          <a href="blogs gleanings.html"> blogs </a>
+        </p>
+      </div>
+
+    <div id="content" class="single">
+      <h1>
+        <strong>Teaching</strong>
+      </h1>
+
+      <div style="text-align: center">
+        <img
+          src="webpage_files/artwork/anonyms-one.jpg"
+          class="center"
+        />
+        <figcaption>
+          <font size="-1">Anonymous, <em>Brillenschlange</em> (1922)</font>
+        </figcaption>
+      </div>
+    </div>
+
+    <div id="content">
+
+      <div class="righty">
+        <h2><strong>Current Teaching (Semester I, 2026-2027)</strong></h2>
+
+        <p>
+          Site for the course can be found at this <a href="404.html"><sa>link</sa></a>.
+          <!--TBD. CS-1110 : Discrete Mathematics (Teaching Fellow) [<a href="current-teaching.html" target="_blank">course homepage</a>] -->
+        </p>
+        
+        <h2><strong>Past Teachings</strong></h2>
+
+        <h4>AT ASHOKA UNIVERSITY</h4>
+                    <p>The following are the courses I have been a part of as a Teaching Fellow in the past at Ashoka University, Sonipat. Click <a href="teaching/Teaching Evaluation 01.pdf" target="_blank"><sa>here</sa></a> to see my 'student evaluations'.</p>
+                    <table>
+                          <tr>
+                              <td>Spring 2025</td>
+                              <td>  </td>
+                              <td>CS 1110</td>
+                              <td>Discrete Mathematics &emsp;[<a href="teaching/CS 1110-co-25.pdf" target="_blank"><sa>co</sa></a>][<a href="teaching/CS 1110-qb-25.pdf" target="_blank"><sa>qb</sa></a>][<a href="https://github.com/Shubhajit412/CS1110_DISCRETE_MATHEMATICS" target="_blank"><sa>pr</sa></a>]</td>
+                              <td>(Teaching Fellow)</td> 
+                          </tr>
+                          <tr>
+                              <td>Monsoon 2024</td>
+                              <td>  </td>
+                              <td>FC 1110</td>
+                              <td>Quantitative Reasoning & Mathematical Thinking &emsp;[<a href="teaching/FC 1110-co-24.pdf" target="_blank"><sa>co</sa></a>][<a href="teaching/FC 1110-qb-24.pdf" target="_blank"><sa>qb</sa></a>]</td>
+                              <td>(Teaching Fellow)</td>
+                          </tr>
+                    </table>
+      </div>
+
+      <div class="lefty">
+        <h2><strong>Notice Board</strong></h2>
+        
+          <!-- Stay tuned for significant updates, which will be posted here as they develop.<br><br>
+          The current semester at Ashoka University (spring 2025) officially ends on 10 May, 2025. The End-Term Examination of the CS-1110 Discrete Mathematics course is on 08 May, 2025. -->
+
+          <!-- <a href="https://www.ashoka.edu.in/wp-content/uploads/2024/02/Academic-Calendar-2024-2025-2.pdf" target="_blank" class="button">learn more.</a> -->
+        
+          <div id="quote-container"></div>
+
+        <script>
+          const quotes = [
+            `<blockquote>
+                If you are not curious,<br>
+                forget it.
+                <cite class="quote-author"><strong>- Achille Castiglioni</strong></cite>
+              </blockquote>`,
+            `<blockquote>
+                Normality is a paved road.
+                It's comfortable to walk, but no flowers grow.<br>
+                <cite class="quote-author"><strong>- Vincent Van Gogh</strong></cite>
+              </blockquote>`,
+            `<blockquote>
+                Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth.
+                <cite class="quote-author"><strong>- Marcus Aurelius</strong></cite>
+              </blockquote>`,
+          ];
+
+          function displayRandomQuote() {
+          const quoteContainer = document.getElementById("quote-container");
+          const randomIndex = Math.floor(Math.random() * quotes.length);
+
+          const poemHTML = `<div>${quotes[randomIndex]}</div>`;
+
+          quoteContainer.innerHTML = poemHTML;
+          }
+
+          displayRandomQuote();
+          setInterval(displayRandomQuote, 12000);
+        </script>
+
+        <br><br>
+        <div style="border: 0.5px solid black; background-color: black; padding: 10px 15px;">
+          <!--<t4 style="color: white;">Index.</t4><br>-->
+            <table style="color: white;">
+              <tr>
+                <td>[qb]</td>
+                <td>question bank</td>
+              </tr>
+              <tr>
+                <td>[pr]</td>
+                <td>program repository</td>
+              </tr>
+              <tr>
+                <td>[ln]</td>
+                <td>lecture notes</td>
+              </tr>
+              <tr>
+                <td>[co]</td>
+                <td>course overview</td>
+              </tr>
+            </table>             
+        </div>
+
+      </div>
+    </div>
+
+    <div id="footer">
+        <p>
+          <a href="index.html"> home </a> - 
+          <a href="research cover.html"> research </a> - 
+          <a href="teaching.html"> teaching </a> - 
+          <a href="about.html"> bio </a> - 
+          <a href="resources.html"> resources </a> - 
+          <a href="blogs gleanings.html"> blogs </a> 
+        </p>
+      </div>
+  </body>
+</html>

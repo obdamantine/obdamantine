@@ -1,0 +1,270 @@
+  <html>
+    <head>
+      <title>Current Teaching</title>
+
+      <link
+        rel="stylesheet"
+        href="webpage_files/style.css"
+        type="text/css"
+        media="screen"
+      />
+
+      <!-- For LaTeX Style Math Mode -->
+      <script type="text/javascript">
+        MathJax = {
+            tex: {
+            inlineMath: [['\$', '\$']],
+            displayMath: [['\$$', '\$$']]
+            }
+        };
+      </script>
+      <script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+      </script>
+
+      <!-- ChatGPT Modifications for tables etc. -->
+        <style>
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+            }
+            th, td {
+                  border-bottom: collapse;
+                  padding: 1px;
+                  text-align: left;
+                  font-weight: 300;
+            }
+            th {
+                  background-color: #536878;
+                  font-family: 'Clark';
+                  font-weight: 600;
+                  color: white;
+                  padding-left: 5px;
+            }
+            td:last-child {
+                  text-align: left;
+            }
+        </style>
+    </head>
+
+    <body>
+      <!--<div id="header">
+        <p>
+          <a href="index.html"> home </a> &emsp; &emsp;
+          <a href="research.html"> research </a> &emsp; &emsp;
+          <a href="teaching.html"> teaching </a> &emsp; &emsp;
+          <a href="about.html"> bio </a> &emsp; &emsp;
+          <a href="resources.html"> resources </a> &emsp; &emsp;
+          <a href="blogs.html"> blogs </a>
+        </p>
+      </div>-->
+
+    <div id="content" class="single">
+      <h1>
+        <strong>institute name</strong><br>dept. name<br>course code : course name
+      </h1>
+
+      <div style="text-align: center">
+        <img
+          src="webpage_files/artwork/blackhole.jpg"
+          class="center"
+        />
+        <figcaption>
+          <font size="-1">Simulated Black Hole, <em>the  very first simulated image of a black hole, calculated using a 1960s' punch card IBM 7040 computer and plotted by hand by French astrophysicist Jean-Pierre Luminet in</em> 1978.</font>
+        </figcaption>
+      </div>
+    </div>
+
+    <div id="content">
+
+        <div class="left">
+            <h2>Logistics</h2>
+            <table>
+                <tr>
+                    <td>Credits</td>
+                    <td>  </td>
+                    <td>[an integer]</td>
+                </tr>
+                <tr>
+                    <td>Classes</td>
+                    <td>  </td>
+                    <td>[time coordinates]</td>
+                </tr>
+                <tr>
+                    <td>Classsroom</td>
+                    <td>  </td>
+                    <td>[space coordinates]</td>
+                </tr>
+                <tr>
+                    <td>Instructor</td>
+                    <td>  </td>
+                    <td>
+                        <a href="mailto:shubhajit.acad@gmail.com"><sa>[email linked name]</sa></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TAs</td>
+                    <td>  </td>
+                    <td>
+                        <a href="mailto:shubhajit.acad@gmail.com"><sa>[email linked name I]</sa></a> <br>
+                        <a href="mailto:shubhajit.acad@gmail.com"><sa>[email linked name II]</sa></a>
+                    </td>
+                </tr>
+            </table><br>
+
+            <h2>Materials</h2>
+            <p>
+              All appropriate course materials like lecture notes, assignments, solution sets etc., will be uploaded in this section as the semester progresses. Check this section periodically to stay updated.
+            </p>
+
+            <h2>Events</h2>
+            <p>
+              Please mind the following course specific events, deadlines and their respective statuses. Note that, it is the students' onus to stay well-informed/updated with the following information.
+            </p>
+            <table>
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Asgn 01</td>
+                    <td>01 Sept.</td>
+                    <td>closed</td>
+                </tr>
+                <tr>
+                    <td>Quiz 01</td>
+                    <td>05 Sept.</td>
+                    <td>next</td>
+                </tr>
+                <tr>
+                    <td>Quiz 02</td>
+                    <td>15 Sept.</td>
+                    <td>scheduled</td>
+                </tr>
+                <tr>
+                    <td>Quiz 03</td>
+                    <td>25 Sept.</td>
+                    <td>scheduled</td>
+                </tr>
+                <tr>
+                    <td>End Sem</td>
+                    <td>10 Oct.</td>
+                    <td>scheduled</td>
+                </tr>
+            </table><br>
+        </div>
+
+        <div class="right">
+        <h2>Course Description</h2>
+        <p>
+          This introductory course offers a foundation in computational thinking as a powerful, structured approach to problem-solving. It is built around one uncompromising standard: correctness. Students will explore the core principles of computation and gain familiarity with key subdisciplines in the field.Working both with and without code, students will learn to design, analyze, and refine solutions with attention to correctness, clarity, and style. The course is anchored in two fundamental computational models: the functional model, which treats computation as the evaluation of mathematical functions, and the imperative model, which views it as a sequence of state-changing instructions. The objectives of this course are to:
+          <ol>
+                <li>
+                    <b>Algorithmic Thinking:</b> Develop the ability to analyze and design algorithms as systematic problem-solving approaches, with an emphasis on precision and efficiency.
+                </li>
+                <li>
+                    <b>Program Correctness and Design:</b> Understand the theoretical principles of program correctness, as well as design principles that emphasize clarity, structure, and style in solutions.
+                </li>
+                <li>
+                    <b>Computational Models:</b> Explore computer science and computation through two core paradigms: the functional model (evaluation of mathematical functions) and the imperative model (state manipulation via sequences of instructions).
+                </li>
+                <li>
+                    <b>Practical Coding Skills:</b> Gain hands-on experience coding in OCaml, with opportunities to explore other languages such as Python, Haskell, Rust, Kotlin, and Prolog.
+                </li>
+                <li>
+                    <b>Foundational Disciplinary Topics:</b> Acquire an introductory understanding of subfields such as information theory, cryptography, compiler design, databases, numerical algorithms, quantitative modeling, and machine learning.
+                </li>
+            </ol>
+        </p>
+
+        <h2>Pre-requisites</h2>
+        <p>
+            The course will require a certain amount of mathematical maturity at least at the level of mathematics at the grade XII level or MAT-1000.
+        </p>
+
+        <h2>Grading</h2>
+        <p>
+            A serious student of a subject is not an idle spectator to a variety show but learns best by active involvement. This is particularly true of mathematical subjects. This course is structured to incentivise involvement through the following:
+
+            <ol>
+                <li>
+                    <b>Assignments:</b> The course includes 3 take-home assignments. These are designed to
+                    supplement the lecture material and offer independent explorations in computer science. They constitute a third of the grade. 
+                </li>
+                <li>
+                    <b>Periodic Assessments:</b> Throughout the semester, there will be a total of five short assessments, comprising of math tests, programming tests, and a viva. Instead of points, you will receive detailed feedback aimed at helping you identify areas for improvement and guide your learning. They constitute a third of the grade. 
+                </li>
+                <li>
+                    <b>Final Exam:</b> The remaining third of the grade will be based on an in-class closed book final exam. 
+                </li>
+            </ol>
+        </p>
+
+        <h2>Policies</h2>
+        <p>
+            Please note the following policies for the course which shall only be changed by the decree of the instructor:
+
+            <ol>
+                <li>
+                    <b>Grading:</b> There will be relative grading such that the cutoff for A grade will not be less than 75% and cutoff for F grade will not be more than 34.9%. Grade distribution will follow a Gaussian distribution (bell curve), where if $\mu$ is the average score and $\sigma$ is the standard deviation of scores, then the mapping will tentatively be<br><br>
+                    <table>
+                        <tr>
+                            <td>A</td>
+                            <td>  </td>
+                            <td>$[\mu + 3\sigma/2,\ 100]$</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>  </td>
+                            <td>$[\mu + \sigma/2,\ \mu + 3\sigma/2)$</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>  </td>
+                            <td>$[\mu - \sigma/2,\ \mu + \sigma/2)$</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>  </td>
+                            <td>$[\mu - 3\sigma/2,\ \mu - \sigma/2)$</td>
+                        </tr>
+                    </table><br>
+                </li>
+                <li>
+                    <b>Attendance:</b> Regular attendance is expected, though not mandatory. Please arrive on time; students more than 5 minutes late should not enter, as this disrupts the class. 
+                </li>
+                <li>
+                    <b>Assignments:</b> All the submissions are due by 11:59 PM on the due date. Timely submission of assignments is required. Late submissions will not be accepted. Exceptions must be approved by the Director of OAA. Discussion amongst students is encouraged, but when in doubt, direct your questions to the instructor, tutor or lab assistant.
+                </li>
+                <li>
+                    <b>Academic Integrity:</b> Plagiarism and other violations (including but not limited to unauthorized use of AI tools) are serious offenses. Any violation will result in a failing grade (F) for the course. Please review the policy carefully. Students are expected to work independently. Many students find it helpful to consult their peers while doing assignments. This practice is legitimate and to be expected. However, it is not acceptable practice to pool thoughts and produce common answers. To avoid this situation, it is suggested that students should not write anything down during such talks, but keep mental notes for later development of their own.
+                </li>
+            </ol>
+        </p>
+
+        <h2>Notes</h2>
+        <p>
+            The instructor of this course reserves the right to adjust schedules, assignments, grading policy, due dates and course contents in any way that serves the educational needs of the students enrolled in this course.<br><br> 
+            Editor currently editing this page must note that this page supports LaTeX style math edits like the following trigonometric identity.
+            $$\sin ^2 \theta + \cos ^2 \theta = 1.$$ 
+            A typical example of an inline math equation would be the identity: $\sin \big(\frac{\pi}{2} - \theta\big) = \cos \theta$.
+        </p>
+        </div>
+    </div>
+
+    <center><a href="teaching.html">back to teaching</a></center>
+    <br><br><br>
+
+    <!--<div id="footer">
+        <p>
+          <a href="index.html"> home </a> - 
+          <a href="research.html"> research </a> - 
+          <a href="teaching.html"> teaching </a> - 
+          <a href="about.html"> bio </a> - 
+          <a href="resources.html"> resources </a> - 
+          <a href="blogs.html"> blogs </a> 
+        </p>
+    </div>-->
+  </body>
+</html>
