@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Routes Map</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: #f5f5f5;
+        }
+        
+        #map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .info-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            max-width: 500px;
+        }
+        
+        .info-panel h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #333;
+            border-bottom: 1.5px solid black;
+            padding-bottom: 8px;
+        }
+        
+        .stats {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.2;
+        }
+        
+        .stats-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+        
+        .stats-label {
+            font-weight: 500;
+            color: #444;
+        }
+        
+        .stats-value {
+            font-weight: 700;
+            color: black;
+        }
+        
+        .leaflet-popup-content-wrapper {
+            border-radius: 8px;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.15);
+        }
+        
+        .leaflet-popup-content {
+            margin: 12px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .popup-header {
+            font-weight: 600;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .popup-detail {
+            color: #666;
+            margin-bottom: 4px;
+        }
+        
+        .airport-marker {
+            background: white;
+            border: 2px solid #2196F3;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+        }
+        
+        .airport-marker.major {
+            width: 14px;
+            height: 14px;
+            border-width: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .info-panel {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <div class="info-panel">
+        <h2>Stats</h2>
+        <div class="stats">
+            <div class="stats-item">
+                <span class="stats-label">Total Flights :</span>
+                <span class="stats-value" id="total-flights">-</span>
+            </div>
+            <div class="stats-item">
+                <span class="stats-label">Airports Visited :</span>
+                <span class="stats-value" id="total-airports">-</span>
+            </div>
+            <div class="stats-item">
+                <span class="stats-label">Countries Visited :</span>
+                <span class="stats-value">3</span>
+            </div>
+            <div class="stats-item">
+                <span class="stats-label">Days in the Air :</span>
+                <span class="stats-value">6.09</span>
+            </div>
+            <div class="stats-item">
+                <span class="stats-label">Towards the Moon (%) : &nbsp;&nbsp;&nbsp;</span>
+                <span class="stats-value">21.10</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // Flight data embedded directly
+        const flightData = {
+  "airports": {
+    "IGI Airport Area, New Delhi, Delhi, India": {
+      "city": "New Delhi",
+      "lat": 28.5562,
+      "lon": 77.1,
+      "code": "DEL"
+    },
+    "Lokpriya Gopinath Bordoloi International Airport": {
+      "city": "Guwahati",
+      "lat": 26.1061,
+      "lon": 91.5859,
+      "code": "GAU"
+    },
+    "Kempegowda International Airport": {
+      "city": "Bangalore",
+      "lat": 13.1986,
+      "lon": 77.7066,
+      "code": "BLR"
+    },
+    "Chhatrapati Shivaji Maharaj International Airport": {
+      "city": "Mumbai",
+      "lat": 19.0896,
+      "lon": 72.8656,
+      "code": "BOM"
+    },
+    "Raja Bhoj Airport": {
+      "city": "Bhopal",
+      "lat": 23.2875,
+      "lon": 77.3374,
+      "code": "BHO"
+    },
+    "Swami Vivekananda International Airport": {
+      "city": "Raipur",
+      "lat": 21.1804,
+      "lon": 81.7388,
+      "code": "RPR"
+    },
+    "Netaji Subhash Chandra Bose International Airport": {
+      "city": "Kolkata",
+      "lat": 22.6547,
+      "lon": 88.4467,
+      "code": "CCU"
+    },
+    "Pune International Airport": {
+      "city": "Pune",
+      "lat": 18.5821,
+      "lon": 73.9197,
+      "code": "PNQ"
+    },
+    "Paris Charles de Gaulle Airport": {
+      "city": "Paris",
+      "lat": 49.0097,
+      "lon": 2.5479,
+      "code": "CDG"
+    },
+    "Aéroport International Montréal-Trudeau": {
+      "city": "Montreal",
+      "lat": 45.4706,
+      "lon": -73.7408,
+      "code": "YUL"
+    },
+    "Rajiv Gandhi International Airport": {
+      "city": "Hyderabad",
+      "lat": 17.2403,
+      "lon": 78.4294,
+      "code": "HYD"
+    },
+    "Bagdogra Airport": {
+      "city": "Bagdogra",
+      "lat": 26.6815,
+      "lon": 88.3286,
+      "code": "IXB"
+    }
+  },
+  "routes": []
+};
+
+// Parse routes from CSV data - these are all 60 actual routes from the data
+const routesData = [
+    ["GAU", "DEL", "Spicejet", "SG 169", "February 24, 2017"],
+    ["DEL", "GAU", "Indigo", "6E 5193", "February 26, 2017"],
+    ["GAU", "BLR", "Indigo", "6E 389", "June 17, 2019"],
+    ["BLR", "GAU", "Indigo", "6E 119", "June 19, 2019"],
+    ["DEL", "BOM", "Indigo", "6E 171", "November 8, 2019"],
+    ["BHO", "DEL", "Indigo", "6E 2036", "March 2, 2020"],
+    ["DEL", "BHO", "Air India", "AI 437", "December 31, 2019"],
+    ["BHO", "DEL", "Air India", "AI 436", "December 2, 2019"],
+    ["DEL", "GAU", "Vistara", "UK 721", "March 2, 2020"],
+    ["DEL", "BHO", "Air India", "AI 437", "October 3, 2021"],
+    ["GAU", "DEL", "Air India", "AI 890", "October 3, 2021"],
+    ["BHO", "DEL", "Indigo", "6E 5058", "December 10, 2021"],
+    ["DEL", "BHO", "Indigo", "6E 2249", "December 12, 2021"],
+    ["BHO", "DEL", "Indigo", "6E 2029", "January 10, 2022"],
+    ["DEL", "GAU", "Indigo", "6E 889", "January 10, 2022"],
+    ["GAU", "DEL", "Indigo", "6E 5039", "March 2, 2022"],
+    ["DEL", "BHO", "Indigo", "6E 2092", "March 2, 2022"],
+    ["BHO", "BOM", "Indigo", "6E 826", "July 16, 2022"],
+    ["BOM", "GAU", "Indigo", "6E 5319", "July 16, 2022"],
+    ["BHO", "DEL", "Indigo", "6E 6824", "July 21, 2022"],
+    ["DEL", "GAU", "Indigo", "6E 889", "July 21, 2022"],
+    ["GAU", "DEL", "Indigo", "6E 6394", "July 31, 2022"],
+    ["DEL", "BHO", "Indigo", "6E 6822", "July 31, 2022"],
+    ["GAU", "DEL", "Indigo", "6E 263", "August 3, 2022"],
+    ["DEL", "BHO", "Indigo", "6E 6822", "August 3, 2022"],
+    ["BHO", "RPR", "Indigo", "6E 7081", "October 1, 2022"],
+    ["RPR", "CCU", "Indigo", "6E 7205", "October 1, 2022"],
+    ["CCU", "RPR", "Indigo", "6E 139", "October 10, 2022"],
+    ["RPR", "BHO", "Indigo", "6E 7082", "October 10, 2022"],
+    ["BHO", "DEL", "Indigo", "6E 6824", "December 2, 2022"],
+    ["DEL", "GAU", "Indigo", "6E 889", "December 2, 2022"],
+    ["GAU", "DEL", "Air India Express", "I5 784", "December 27, 2022"],
+    ["DEL", "PNQ", "Air India Express", "I5 737", "December 27, 2022"],
+    ["BHO", "DEL", "Indigo", "6E 6824", "March 2, 2023"],
+    ["DEL", "GAU", "Indigo", "6E 889", "March 2, 2023"],
+    ["CCU", "GAU", "Indigo", "6E 572", "March 6, 2023"],
+    ["GAU", "DEL", "Indigo", "6E 521", "March 12, 2023"],
+    ["DEL", "BHO", "Indigo", "6E 2168", "March 12, 2023"],
+    ["DEL", "CDG", "Air France", "AF 225", "May 5, 2023"],
+    ["CDG", "YUL", "Air France", "AF 342", "May 5, 2023"],
+    ["YUL", "CDG", "Air France", "AF 347", "July 31, 2023"],
+    ["CDG", "BOM", "Air France", "AF 212", "August 1, 2023"],
+    ["BOM", "BHO", "Indigo", "6E 826", "August 2, 2023"],
+    ["BOM", "DEL", "Indigo", "6E 171", "August 2, 2023"],
+    ["HYD", "IXB", "Indigo", "6E 495", "August 26, 2023"],
+    ["BHO", "DEL", "Indigo", "6E 6094", "October 18, 2023"],
+    ["DEL", "GAU", "Indigo", "6E 2095", "October 18, 2023"],
+    ["GAU", "DEL", "Indigo", "6E 521", "October 30, 2023"],
+    ["DEL", "BHO", "Indigo", "6E 894", "October 30, 2023"],
+    ["BHO", "DEL", "Indigo", "6E 587", "February 7, 2024"],
+    ["DEL", "GAU", "Indigo", "6E 2095", "February 7, 2024"],
+    ["GAU", "IXB", "Akasa Air", "QP 1372", "February 13, 2024"],
+    ["GAU", "DEL", "Indigo", "6E 263", "February 21, 2024"],
+    ["DEL", "BHO", "Indigo", "6E 2184", "February 21, 2024"],
+    ["GAU", "DEL", "Indigo", "6E 5419", "September 1, 2024"],
+    ["DEL", "GAU", "Air India Express", "IX 1142", "December 16, 2024"],
+    ["DEL", "GAU", "Indigo", "6E 2095", "October 2, 2024"],
+    ["GAU", "DEL", "Indigo", "6E 265", "January 13, 2025"],
+    ["GAU", "DEL", "Air India Express", "IX 1192", "October 12, 2024"],
+    ["DEL", "GAU", "Air India Express", "IX 1200", "May 22, 2025"]
+];
+
+// Convert route data to proper format
+const airportLookup = {};
+Object.keys(flightData.airports).forEach(key => {
+    const airport = flightData.airports[key];
+    airportLookup[airport.code] = {
+        name: key,
+        ...airport
+    };
+});
+
+routesData.forEach(route => {
+    const [fromCode, toCode, airline, flight, date] = route;
+    const fromAirport = airportLookup[fromCode];
+    const toAirport = airportLookup[toCode];
+    
+    if (fromAirport && toAirport) {
+        flightData.routes.push({
+            from_coords: [fromAirport.lat, fromAirport.lon],
+            to_coords: [toAirport.lat, toAirport.lon],
+            from_city: fromAirport.city,
+            to_city: toAirport.city,
+            from_code: fromCode,
+            to_code: toCode,
+            segment: `${fromCode}-${toCode}`,
+            airline: airline,
+            flight: flight,
+            date: date
+        });
+    }
+});
+
+// Initialize map
+const map = L.map('map', {
+    zoomControl: true,
+    attributionControl: true
+}).setView([25, 75], 4);
+
+// Add tile layer - clean, minimal style
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+}).addTo(map);
+
+// Function to create curved geodesic line
+function createCurvedLine(from, to, isInternational) {
+    const color = isInternational ? '#FF5722' : '#2196F3';
+    const weight = isInternational ? 2.5 : 1.5;
+    const opacity = 0.6;
+    
+    // Calculate midpoint with an offset for curve
+    const midLat = (from[0] + to[0]) / 2;
+    const midLon = (from[1] + to[1]) / 2;
+    
+    // Calculate distance for curve offset
+    const distance = Math.sqrt(Math.pow(to[0] - from[0], 2) + Math.pow(to[1] - from[1], 2));
+    const curveOffset = distance * 0.15; // Curve height
+    
+    // Create quadratic bezier curve points
+    const steps = 50;
+    const points = [];
+    
+    for (let i = 0; i <= steps; i++) {
+        const t = i / steps;
+        const lat = (1 - t) * (1 - t) * from[0] + 2 * (1 - t) * t * (midLat + curveOffset) + t * t * to[0];
+        const lon = (1 - t) * (1 - t) * from[1] + 2 * (1 - t) * t * midLon + t * t * to[1];
+        points.push([lat, lon]);
+    }
+    
+    return L.polyline(points, {
+        color: color,
+        weight: weight,
+        opacity: opacity,
+        smoothFactor: 1
+    });
+}
+
+// Count airport frequencies for marker sizing
+const airportFrequency = {};
+flightData.routes.forEach(route => {
+    airportFrequency[route.from_code] = (airportFrequency[route.from_code] || 0) + 1;
+    airportFrequency[route.to_code] = (airportFrequency[route.to_code] || 0) + 1;
+});
+
+// Draw routes
+flightData.routes.forEach(route => {
+    const isInternational = route.from_code === 'CDG' || route.to_code === 'CDG' || 
+                           route.from_code === 'YUL' || route.to_code === 'YUL';
+    
+    const line = createCurvedLine(route.from_coords, route.to_coords, isInternational);
+    line.addTo(map);
+    
+    // Add popup to route
+    line.bindPopup(`
+        <div class="popup-header">${route.from_city} → ${route.to_city}</div>
+        <div class="popup-detail"><strong>Flight:</strong> ${route.airline} ${route.flight}</div>
+        <div class="popup-detail"><strong>Route:</strong> ${route.from_code} → ${route.to_code}</div>
+        <div class="popup-detail"><strong>Date:</strong> ${route.date}</div>
+    `);
+});
+
+// Add airport markers
+Object.keys(flightData.airports).forEach(key => {
+    const airport = flightData.airports[key];
+    const frequency = airportFrequency[airport.code] || 0;
+    const isMajor = frequency > 10;
+    
+    const marker = L.circleMarker([airport.lat, airport.lon], {
+        radius: isMajor ? 7 : 5,
+        fillColor: '#2196F3',
+        color: '#ffffff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.9
+    }).addTo(map);
+    
+    marker.bindPopup(`
+        <div class="popup-header">${airport.city}</div>
+        <div class="popup-detail"><strong>Code:</strong> ${airport.code}</div>
+        <div class="popup-detail"><strong>Flights:</strong> ${frequency}</div>
+    `);
+});
+
+// Update stats
+document.getElementById('total-flights').textContent = flightData.routes.length;
+document.getElementById('total-airports').textContent = Object.keys(flightData.airports).length;
+
+// Auto-fit bounds to show all routes
+const bounds = L.latLngBounds(
+    flightData.routes.map(r => r.from_coords).concat(
+        flightData.routes.map(r => r.to_coords)
+    )
+);
+map.fitBounds(bounds, { padding: [50, 50] });
+
+console.log(`✓ Map loaded with ${flightData.routes.length} routes and ${Object.keys(flightData.airports).length} airports`);
+    </script>
+</body>
+</html>

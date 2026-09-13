@@ -1,0 +1,373 @@
+  <html>
+    <head>
+      <title>Blog Six</title>
+
+      <link
+        rel="stylesheet"
+        href="webpage_files/style.css"
+        type="text/css"
+        media="screen"
+      />
+
+      <!-- For LaTeX Style Math Mode -->
+      <script type="text/javascript">
+        MathJax = {
+            tex: {
+            inlineMath: [['\$', '\$']],
+            displayMath: [['\$$', '\$$']]
+            }
+        };
+      </script>
+      <script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+      </script>
+
+      <!-- ChatGPT Modifications for tables etc. -->
+        <style>
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+            }
+            th, td {
+                  border-bottom: collapse;
+                  padding: 5px;
+                  text-align: left;
+                  font-weight: 300;
+            }
+            th {
+                  background-color: #f2f2f2;
+            }
+            td:last-child {
+                  text-align: left;
+            }
+        </style>
+    </head>
+
+    <body>
+
+    <div id="content" class="single-wide">
+      <h1>
+        <strong>The Grammar of Disagreement - 
+                <font color="#999">an attempt to see debates as kins of proofs</font>
+        </strong>
+      </h1>
+
+      <div style="text-align: center; margin-top: -4.5em;">
+        <!--<div style="border: 0.5px solid black; padding: 05px;">-->
+          <strong>Some Day, 2026</strong>
+        <!--</div>--> 
+        <br><br><br><br>
+
+        <img src="webpage_files/artwork/duchamp.jpg" class="center" style="width: 600px;" />
+        <figcaption>
+          <font size="-1">Marcel Duchamp, <em>Portrait of Chess Players</em> (1911)</font>
+        </figcaption>
+      </div>
+
+      <p>
+        <b>Pr&eacute;cis. </b> Systems of formal arguments, i.e., debates have been historically formative of human civilisations and continues to shape the world around us in a very seminal yet subtle way. The article primarily is based on the idea that the very same philosophy of logic, which were distilled to concretise the structures of mathematical proofs, also forms the backbone of idealistic systems of formal arguments or debates. This article attempts, in a loose sense, is to absorb and get inspired from some of such foundational philosophies and use them to improve upon how one should argue/debate.
+      </p>
+      
+    </div>
+ 
+
+    <div id="content">
+
+      <div class="righty">
+        <h2><strong>1. Introduction - <font color="#999">a gentle warm-up</font></strong></h2> 
+
+        <p>
+          <span class="ref-link" data-ref="100"></span>The case that mathematics describes reality with certainty is an old axiom, and one that has proven oddly hard to dislodge. The belief that the physical world submits to precise mathematical description was not merely popular, rather it was foundational to how scientific inquiry organised itself. What made it credible was not mathematics in the broad sense of calculation, but something narrower, particularly, proofs being a certain way of thinking. Logical principles that had been formative in constructing sensible and functional arguments for centuries were eventually concretised into specific techniques - deductions, contradiction, induction and many more. This concretisation was precise enough to establish facts about objects that cannot be directly observed, or many times happened to be insanely counter-intuitive. The same techniques reach further than most people notice.
+          <br><br>
+
+          Argument fundamentally, albeit loosely, does outside mathematics what a proof does in math. A judge reasoning from statute to verdict and a scientist moving from an experimental result to a conclusion, are both doing something structurally close to what a mathematician does when sitting down to prove a theorem. The same applies, in principle, to the ordinary arguments that constitute public disagreements. But in practice, it rarely works that way. The question is <em>why formal arguments or debates, something which are linked to the foundations of us understanding reality from the beginning and which are still a saturated part of the world around us appear to be fractured?</em>
+          <br><br>
+
+          Contemporary models, which promise to take the craft of arguing to the next level, attempt to infuse pioneering works in the philosophy of persuasion. Some of the successful works have been curated by <b>Jay Heinrichs</b> and <b>Bo Seo</b>, in their respective books. This article rather considers the inquisitive <em>why does the machinery of arguments appear to be dismantled?</em> and how we can fix it from the lens of mathematical logic.
+          <br><br>
+
+          We begin with a prose, more of an apposite parable, about six blind men and an elephant. Even after several attempts at framing an academically elegant title for it, I could not come up with anything better than its subtitle 'All of them were right. And yet, all of them were wrong.' $\mathbf{^0}$<span class="ref-link" data-ref="0"> </span>
+          <br><br>
+        </p>
+          
+          <blockquote>
+            There were six blind men of Bh&amacr;rat,<br>
+            to learning much inclined,<br>
+            who wanted to see the elephant.<br>
+            Though all of them were blind,<br>
+            that each by observation might satisfy their mind.<br><br>
+
+            So the first approached the elephant and<br>
+            he touched the elephant's belly and pronounced,<br>
+            the elephant is like a wall.<br>
+            The second touched the tusks and said,<br>
+            I feel something very round and smooth and sharp.<br>
+            To make this mighty clear,<br>
+            the elephant is very like a spear.<br><br>
+
+            The third approached the elephant and<br>
+            took the trunk in his hands and said,<br>
+            the elephant is like a snake.<br>
+            The fourth approached the elephant,<br>
+            took by the leg and said,<br>
+            the elephant is just like a bark of the tree.<br>
+            The fifth approached the elephant,<br>
+            touched the fan-like ears of the elephant and said,<br>
+            of course, the elephant is like a hand fan.<br><br>
+
+            And the sixth one touched the tail and said,<br>
+            It's like a rope.<br>
+            And so these six wise men of Bh&amacr;rat,<br>
+            they debated loud and long,<br>
+            each in their opinions, stiff and strong.<br><br>
+
+            All of them were right.<br>
+            And yet, all of them were wrong.
+          </blockquote>  
+
+        <p>  
+          The poem is centuries old, and what it describes is not a philosophical puzzle, rather it is a mundane failure that recurs reliably in several parts-and-parcels of the world around us. Six people, each with a genuine observation, each confident they understand the whole animal. Each wrong in exactly the same way.
+          <br><br>
+
+          Russell and Whitehead$\mathbf{^1}$<span class="ref-link" data-ref="1"> </span>spent nearly a decade, in the early twentieth century, trying to rebuild mathematics from purely logical foundations. The Principia Mathematica runs to three volumes and is, in all honesty, essentially unreadable to mathematicians. It was also, in a narrow technical sense, a success. Then G&#246;del proved, in 1931, that any sufficiently expressive formal system contains statements it can neither prove nor disprove from within itself$\mathbf{^2}$.<span class="ref-link" data-ref="2"> </span>Not some systems, all of them. This is not a flaw in the Principia. It is a structural fact about formal reasoning. The blind men are not being careless or stupid. They are subject to a constraint that no amount of care removes. 
+        </p>
+
+        <h2><strong>2. Misplaced Reasoning - <font color="#999">a subtle gap</font></strong></h2> 
+
+        <p>
+          The flaw in popular natural arguments$\mathbf{^3}$<span class="ref-link" data-ref="3"> </span>is that, when people explain what debate is for, their answers tend to reveal what they actually believe about knowledge. Persuasion is the most common answer and what follows it are entertainment, conflict and the rehearsal of a position already held (this is simply dominance). None of these are entirely wrong. People describe what debate gets mostly used for in non-academic day-to-day lives, not what it was built to do.
+          <br><br>
+
+          Two uncorrelated but elegant application scenarios revolving around the importance of formal arguments$\mathbf{^4}$<span class="ref-link" data-ref="4"> </span>are as follows :
+          <ol>
+            <li><p>Consider the courtroom. Two lawyers argue opposing positions before a judge, who is a third party committed to consistency and evidence. The judge has to reconstruct what actually happened from two partial and adversarial accounts. It is easy to mistake the lawyers for the point but they are not. The judge is. Neither lawyer sees the whole. But from their collision, assuming both are arguing honestly, something closer to the truth tends to emerge. That is the design of the exercise : not a contest with a winner, but an approximation procedure designed to eventually land closer to the truth.</p></li>
+
+            <li><p>Traditionally, in functional approximation theory, when no closed form exists, one constructs a sequence of estimates that converge toward the true value. Each individual estimate is wrong but the sequence is what is useful. Formal arguments work in the same way. No single perspective captures the full picture, but a well-conducted exchange, one where participants are trying to be accurate rather than prevailing, tends to leave everyone less wrong than they were at the start. The reason to hear out the other five blind men is not courtesy. It is that you cannot know whether the elephant has a tail if you have only ever touched its belly.</p></li>
+          </ol>  
+        </p>
+
+        <h2><b>3. Caveats to Refinement - <font color="#999">identifying the turnable flaws</font></b></h2>
+
+        <p>
+          For these or any other examples on similar lines, what makes any of them work is critical listening, which is harder than it sounds and rarer than it should be. Not passive, not credulous - listening that actually tests what it hears against logical consistency. When one of the blind men insists the elephant is like a wall, the right response is neither dismissal nor agreement. Rather it is : what did you touch? What would change your mind? Russell asked exactly these questions when he found the paradox at the heart of Cantor's set theory. it's what G&#246;del asked them when he set out to formally prove that proof has limits$\mathbf{^5}$.<span class="ref-link" data-ref="5"> </span>It is the same habit in both the above mentioned cases, applied at very different scales. My understanding of mathematico philosophy$\mathbf{^6}$<span class="ref-link" data-ref="6"> </span>identifies four caveats which routinely prevent such right responses from happening.
+          <br><br>
+
+          The first is mistaking performance for argument. A remarkable portion of what passes for formal argument is a display of fluency - confidence, vocabulary, rhetorical command etcetera. These are not worthless. But when the form of an exchange is valued above its function, it stops doing any real epistemic work. Often people leave more impressed by each other than by anything they have learned. In our analogy, there is a distant possibility that each observer might get impressed by the orthogonal views of the other observers, solely because of the manner in which each observation is produced and not by the observations themselves. Note that, in such a case, the manner in which the observations are produced is not evidence that the speaker has actually touched the elephant.
+          <br><br>
+
+          The second is the argument from authority. Someone invokes a Nobel laureate. Someone else invokes a different one. The audience picks a side based on whose laureate they already preferred before the conversation began. Expertise is real, and one cannot verify everything from first principles - but credentials are evidence about a person, not about the claim they are making. Russell was wrong about several things he held with great confidence. G&#246;del, in his final years, developed a fear of being poisoned that led him to stop eating, and that eventually killed him. Authority can open a line of inquiry but IMHO$\mathbf{^7}$,<span class="ref-link" data-ref="7"> </span>it cannot close one.
+          <br><br>
+
+          The third is the deliberate misrepresentation of an opposing position. Distorting what someone said, or attributing to them conclusions they never reached, might produce a tactical advantage in a public setting. It produces nothing else. The exchange ends; no one knows any more about the elephant than when they started. <em>Ever tried to follow a session of the Indian Parliament?</em>
+          <br><br>
+
+          The fourth one is a bit more important one and requires attention. It is what the next section is all about.
+        </p>
+
+        <h2><b>4. Bottleneck in Tenses - <font color="#999">the last choke point </font></b></h2>
+        <p>
+          <b>Aristotle</b>, in his book The Rhetoric, distinguished three types of argumentative situations based on each of the three sentences : blame, choice and values. Debates about what happened in the past often revolve around blame, debates about what should hold now are about values, and debates about what ought to be done going forward are essentially about choices. They have different logics and different evidentiary requirements.
+        </p>
+
+          <span class="ref-link" data-ref="101"></span>
+          <ol>
+            <li><p><b>Blame - The Past.</b> If the discussion is Mr. XYZ helped his wife commit euthanasia. We see that most of the arguments in this process will be in past tense. Almost all sentences spoken in favour or against would be in the past tense.</p></li>
+            <li><p><b>Values - The Present.</b> If the motion was something like euthanasia is a human right, we would be having sentences being spoken in the present tense. Mostly, what is right, what is wrong. A tussle between blacks and whites, all confined in the lens of present, but conveniently defying accommodations for the essential greys.</p></li>
+            <li><p><b>Choices - The Future.</b> And if it was something like euthanasia should be legal in India, it would again be in future tense. What should have been mature argumentative discussions, sneakily turns into a salad of baseless speculations.</p></li>
+          </ol>
+
+        <p>
+          So of course, the topic decides the tense. However, it is pragmatically evident that the converse is also true. It is very surprising that if one person notices their own style of speaking and the tense in which they speak, they will be able to observe the correlation between the topic and the tense very clearly.
+          <br><br>
+
+          The fourth caveat promised in the last section is thus the conscious or unconscious derangement between the argument category and its appropriate tense. This prominently happens when people are not aware of their natural bias for a certain tense of lingo. Basically, if one has a natural habit to speak in the past tense, most attempts at formal arguments will end up being a blame game, when you want to throw the blame at someone else. Now, blame games do not help in any constructive output, especially when the need-of-the-moment strictly belongs to the other categories of debate. Such derangements quietly ensure that formal arguments, no matter how good they are, always end-up diverging far away from the truth.
+        </p>  
+
+        <h2><b>5. Quod Erat Demonstrandum - <font color="#999">closing remarks</font></b></h2>
+
+        <p><span class="ref-link" data-ref="102"></span>
+          In any exchange that is honestly trying to understand something, what one owes the other person, analogously, is a faithful account of what one actually touched and then, harder, the patience to hear what they found when they reached somewhere else. G&#246;del's result is a reminder that even the most rigorous formal systems we have leave things permanently open, and human discourse is considerably less rigorous. But the goal was never to close the question. It is to add one more observation, slightly narrowing the space between us and the truth.
+          <br><br>
+
+          Now that we have seen the major caveats which jeopardises systems of formal arguments, identifying counter-measures is just an attempt at extracting negations of these caveats. Like what my mentors have always done, the job of identifying the  counter-measures is <em>left as an exercise.</em>
+        </p>  
+
+      </div>
+
+      <div class="lefty">
+
+        <div id="fn-0" class="footnote" style="position: absolute;">
+          $\mathbf{^0}$This is an adapted excerpt version of 'The Blind Men and the Elephant' by John Godfrey Saxe. Note that, Saxe did not invent the story itself, rather he adapted an ancient Indian lore-element into English verse. The English poem dates mid-19th century while its Indian origins belongs from 500 BCE.
+        </div>
+
+        <div id="fn-1" class="footnote" style="position: absolute;">
+          $\mathbf{^1}$Bertrand Russell and Alfred North Whitehead.
+        </div>
+
+        <div id="fn-2" class="footnote" style="position: absolute;">
+          $\mathbf{^2}$This is a loose essence of one G&#246;del's Incompleteness Theorems, the works which laid the foundations of mathematical logic, discrete mathematics and eventually set theory. 
+        </div>
+
+        <div id="fn-3" class="footnote" style="position: absolute;">
+          $\mathbf{^3}$What I mean by 'natural argument', is the counterpart of 'natural language' from the discussion realms of formal logic or simply the NL in NLP.
+        </div>
+
+        <div id="fn-4" class="footnote" style="position: absolute;">
+          $\mathbf{^4}$Here 'formal argument' is synonymous with 'debate'. In a way, mathematical proofs are <b>complete</b> formal arguments. 
+        </div>
+
+        <div id="fn-5" class="footnote" style="position: absolute;">
+          $\mathbf{^5}$In essence proofs are a certain way of formalised thinking, which has limits.
+        </div>
+
+        <div id="fn-6" class="footnote" style="position: absolute;">
+          $\mathbf{^6}$There is no sensible thing called 'mathematico philosophy' (at least not till I last checked). What I mean by this weird looking term are the philosophical proceedings which distilled logic and gave proof techniques. Usage of terms like 'mathematical philosophy' and 'philosophical math' might get me exiled from my professional community for good!
+        </div>
+
+        <div id="fn-7" class="footnote" style="position: absolute;">
+          $\mathbf{^7}$IMHO is the tweeter lingo for "in my humble opinion".
+        </div>
+
+        <div id="fn-100" class="footnote" style="position: absolute;">
+          <img src="webpage_files/blog06/godel-einstein.jpg.webp" class="center"/>
+          <b>Einstein and G&#246;del.</b> In the 1940s and 50s, young logician and the genius formed a profound friendship at the <a href="https://www.ias.edu/kurt-g%C3%B6del-and-institute" target="_blank"><sa>Institute for Advanced Study</sa></a> in Princeton, taking daily walks together, discussing or arguing ideas. Einstein valued these walks immensely, often saying he went to his office just for the pleasure of walking home with G&#246;del.
+        </div>
+
+        <div id="fn-101" class="footnote" style="position: absolute;">
+          <img src="webpage_files/blog06/presidental_debate.jpg.webp" class="center"/>
+          <b>US Presidential Debate 2024.</b> An event primarily meant to make voters better informed, effortlessly goes south, concluding that one of the participants is horrendous at golf!
+        </div>
+
+        <div id="fn-102" class="footnote" style="position: absolute;">
+          <img src="webpage_files/blog06/school-of-athens.png" class="center"/>
+          <b>School of Athens by Raphael.</b> One of the most popular contenders to depict the boom of philosophical debates from the Renaissance.
+        </div>
+
+      </div>
+    </div>
+
+    <div id="content" class="single-wide">
+      <h2 style="margin-bottom: -20px;"><b>Books & Reading Recommendations</b></h2>
+
+        <ol>
+          <li><b>Jim Holt.</b> <em>When Einstein Walked with G&#246;del</em></li>
+          <li><b>Jay Heinrichs.</b> <em>Thank You for Arguing: What Aristotle, Lincoln, and Homer Simpson Can Teach Us About the Art of Persuasion</em></li>
+          <li><b>Bo Seo.</b> <em>The Art of Disagreeing Well:  How Debate Teaches Us To Listen</em></li>
+          <li><b>Dustin Arand.</b> <em>Seven Philosophical Debates You Have to Understand</em> [<a href="https://medium.com/illumination/seven-philosophical-debates-you-have-to-understand-2ec70f2514a2" target="_blank"><sa>link</sa></a>]</li>
+        </ol>
+
+        <center>
+        <div style="text-align: center; width: 700px; margin-top: -25px;">
+          <img src="webpage_files/blog06/books-1.png" class="center" style="width: 800px;" />
+        </div>
+        </center>
+
+      <h2><b>References & Readings</b></h2>
+
+        <ol>
+          <li>
+            <b>Aristotle.</b> <em>Rhetoric. (c. 350 BCE).</em> Trans. W. Rhys Roberts. Clarendon Press, 1924.
+            <font color="#6E8E96">
+              The foundational treatment of argumentative types - forensic (blame), deliberative (choice), and epideictic (values) - that underlies the structural taxonomy discussed here.
+            </font>
+          </li>
+
+          <li>
+            <b>Russell, Bertrand, and Alfred North Whitehead.</b> <em>Principia Mathematica.</em> 3 vols. Cambridge University Press, 1910-1913.
+            <font color="#6E8E96">
+              The attempt to ground all of mathematics in logic, and the background against which G&#246;del's incompleteness results must be understood.
+            </font>
+          </li>
+
+          <li>
+            <b>G&#246;del, Kurt.</b> <em>&#xDC;ber formal unentscheidbare S&#xE4;tze der Principia Mathematica und verwandter Systeme I.</em> Monatshefte f&#xFC;r Mathematik und Physik 38 (1931): 173-198.
+            <font color="#6E8E96">
+              The incompleteness theorems. An accessible account can be found in Nagel & Newman below.
+            </font>
+          </li>
+
+          <li>
+            <b>Nagel, Ernest, and James R. Newman.</b> <em>G&#246;del's Proof.</em> New York University Press, 1958. Revised edition, 2001.
+            <font color="#6E8E96">
+              A clear, non-technical exposition of G&#246;del's incompleteness theorems - the best entry point for readers without formal logic background.
+            </font>
+          </li>
+
+          <li>
+            <b>Russell, Bertrand.</b> <em>The Problems of Philosophy.</em> Home University Library, 1912.
+            <font color="#6E8E96">
+              Russell's most accessible treatment of the limits of human knowledge and the relationship between perception and truth - directly relevant to the epistemological framing of this essay.
+            </font>
+          </li>
+
+          <li>
+            <b>Plato.</b> <em>Meno; Theaetetus; The Republic.</em> Various translations.
+            <font color="#6E8E96">
+              The Socratic dialogues from which critical listening as a method of inquiry descends. "The Theaetetus" is particularly relevant as an examination of what it means to know something.
+            </font>
+          </li>
+
+          <li>
+            <b>Toulmin, Stephen.</b> <em>The Uses of Argument.</em> Cambridge University Press, 1958.
+            <font color="#6E8E96">
+              A rigorous analysis of the structure of practical arguments - their claims, grounds, warrants, and rebuttals - that complements the Aristotelian taxonomy introduced here.
+            </font>
+          </li>
+
+          <li>
+            <b>Saxe, John Godfrey.</b> <em>The Blind Men and the Elephant.</em> The Poems of John Godfrey Saxe. James R. Osgood and Company, 1873.
+            <font color="#6E8E96">
+              The Western verse rendering of the Jain parable, which supplies the opening image of the essay.
+            </font>
+          </li>
+
+          <li>
+            <b>Habermas, J&#xFC;rgen.</b> <em>The Theory of Communicative Action.</em> Vol. 1. Trans. Thomas McCarthy. Beacon Press, 1984.
+            <font color="#6E8E96">
+              A systematic account of what conditions must hold for discourse to be genuinely truth-seeking rather than strategic - the philosophical underpinning of what this essay calls "critical listening".
+            </font>
+          </li>
+
+        </ol>   
+    </div>
+
+    <script>
+        function alignFootnotes() {
+          const references = document.querySelectorAll('.ref-link');
+  
+          // This variable remembers where the bottom of the last footnote was
+          let previousBottom = 0; 
+  
+          // Minimum space (in pixels) you want between stacked footnotes
+          const gap = 15; 
+
+          references.forEach(ref => {
+          const refNumber = ref.getAttribute('data-ref');
+          const footnote = document.getElementById(`fn-${refNumber}`);
+    
+          if (footnote) {
+          // 1. Where does the footnote WANT to be? (Aligned with text)
+          const idealTop = ref.offsetTop;
+      
+          // 2. Where DOES it have to be to avoid overlapping?
+          // It takes the greater value: its ideal position, OR just below the previous footnote.
+          let actualTop = Math.max(idealTop, previousBottom);
+      
+          // Apply the position
+          footnote.style.top = `${actualTop}px`;
+      
+          // 3. Update the bottom edge tracker for the next footnote in the loop
+          // We add footnote.offsetHeight to get the bottom edge, plus our gap
+          previousBottom = actualTop + footnote.offsetHeight + gap;
+            }
+          });
+        }
+
+      // Run the script when the page loads
+      window.addEventListener('load', alignFootnotes);
+      // Re-run if the window is resized (since text wrapping changes heights)
+      window.addEventListener('resize', alignFootnotes);
+  </script>
+    
+  </body>
+</html>
