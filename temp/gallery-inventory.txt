@@ -1,0 +1,256 @@
+Gallery Inventory
+
+1.	File name : edwin.jpg
+	Title     : The Pantheon
+	Artist    : Frederic Edwin
+	Year      : 1871
+
+2.	File name : bendre.jpg
+	Title	  : Cosmos in the Making
+	Artist    : NS Bendre
+	Year      : 1963
+
+3.  File name : hebbar.png
+	Title     : Civiization
+	Artist    : KK Hebbar
+	Year      : 1963
+
+4.  File name : hussain-bharat.png
+	Title     : Bharat Bhagya Vidhata
+	Artist    : MF Hussain
+	Year      : 1964
+
+5.  File name : jamini.png
+	Title     : Krishna and Balaram
+	Artist    : Jamini Roy
+	Year      : 1932
+
+6.  File name : tavernier.jpg
+	Title     : Dance in Subterranean Roundhouse at Clear Lake - California
+	Artist    : Jules Tavernier
+	Year      : 1878
+
+7.  File name : raphael.jpg
+	Title     : The School of Athens
+	Artist    : Raphael
+	Year      : 1510
+
+8.  File name : triumphant.jpg
+	Title     : Man Triumphant
+	Artist    : RD Raval
+	Year      : 1963
+
+9.  File name : lerolle.jpg
+	Title     :	The Organ Rehearsal
+	Artist    : Henry Lerolle
+	Year      : 1885
+
+10.  File name : jamini.jpg
+	 Title     : Boating
+	 Artist    : Jamini Roy
+	 Year      : 1920
+
+11.  File name : sophie.jpg
+	 Title     : Vertical-Horizontal Composition
+	 Artist    : Sophie Taeuber-Arp
+	 Year      : 1928
+
+12.  File name : anonyms-one.jpg
+	 Title     : Brillenschlange
+	 Artist    : Anonymous
+	 Year      : 1922
+
+13.  File name : hugo.jpg
+	 Title     : Chaussée
+	 Artist    : Victor Hugo
+	 Year      : 1850
+
+14.  File name : lindsay.jpg
+	 Title     : Sky Study No. 4
+	 Artist    : Thomas Lindsay
+	 Year      : 1827
+
+15.  File name : lear.jpg
+	 Title     : Haridwar
+	 Artist    : Edward Lear
+	 Year      : 1875
+
+16.  File name : ackerman.png
+	 Title     : Benaras, India
+	 Artist    : Michael Ackerman
+	 Year      : 1994
+
+17. File name  : gestel.jpg
+	Title      : Tapijtontwerp motief
+	Artist     : Leo Gestel
+	Year       : 1928
+
+18. File name  : anonyms-two.jpg
+	Title      : Steinmarmorpapier
+	Artist     : Anonymous
+	Year       : 1730
+
+19. File name  : kyster.jpg
+	Title      : Marmorpapier
+	Artist     : Anker Kyster
+	Year       : 1890
+
+20. File name  : malton.jpg
+	Title      : East India House
+	Artist     : Thomas Malton
+	Year       : 1788
+	 
+21. File name  : bellotto.jpg
+	Title      : The Fortress of Königstein
+	Artist	   : Bernardo Bellotto
+	Year	   : 1757
+
+22. File name  : motherwell.png
+	Title	   : Reconciliation Elegy
+	Artist     : Robert Motherwell
+	Year       : 1978
+
+23. File name  : jamini.png
+	Title	   : Untitled Last Supper
+	Artist     : Jamini Roy
+	Year       : 1952
+
+24. File name  : horska.png
+	Title	   : Samarkand
+	Artist     : Alla Horska
+	Year       : 1963
+
+25. File name  : chong.png
+	Title	   : Revival
+	Artist     : Jared Young Chong
+	Year       : 1972
+
+26. File name  : chemiakin.png
+	Title	   : Metaphysical
+	Artist     : Mihail Chemiakin
+	Year       : 1985
+
+27. File name  : lewitt.png
+	Title	   : Wavy Lines
+	Artist     : Sol LeWitt
+	Year       : 1998
+
+28. File name  : yeldham.jpg
+	Title	   : Driftwood
+	Artist     : Joshua Yeldham
+	Year       : 2015
+
+29. File name  : buck.jpg
+	Title	   : A Row of Trees
+	Artist     : Jethro Buck
+	Year       : 2011
+
+30. File name  : yeldham-head.jpg
+	Title	   : Elephant Rock
+	Artist     : Joshua Yeldham
+	Year       : 2013
+
+31. File name  : hussain-three.jpg
+	Title	   : The Tale of Three Cities
+	Artist     : MF Hussain
+	Year       : 2005
+
+32. File name  : hussain-dynasties.jpg
+	Title	   : 3 Dynasties
+	Artist     : MF Hussain
+	Year       : 2008
+
+31. File name  : hussain-un.jpg
+	Title	   : Untitled
+	Artist     : MF Hussain
+	Year       : 1969
+
+32. File name  : bose.jpg
+	Title	   : Abhimanyu Badh
+	Artist     : Nadalal Bose
+	Year       : 1947
+
+33. File name  : patra.jpg
+	Title	   : Matsyā
+	Artist     : Varsha Patra
+	Year       : 2017
+	Details    : Mátsya is the avatar of the Hindu God Vishnu in the form of a fish. Here Mátsya is depicted in an anthropomorphic form, where the
+	    		 upper half is that of the four-armed man and the lower half is a fish. It is believed to symbolise the first stage of evolution, as aquatic life was the first beings on earth. The outline of this work configures, the four attributes of Lord Vishnu, namely the Chakra (wheel of time), a Shankha (conch, a war trumpet), a Gada (mace, the weapon) and Lotus (divine beauty and purity) making him the Supreme Being who preserves and protects the entire creation.
+
+34. File name  : abramishvili.jpg
+	Title	   : Black Panther
+	Artist     : Merab Abramishvili
+	Year       : 2005
+
+35. File name  : suetin.jpg
+	Title	   : Suprematism
+	Artist     : Nikolai Suetin
+	Year       : 1920
+
+36. File name  : munch.jpg
+	Title	   : The Sun
+	Artist     : Edvard Munch
+	Year       : 1909
+
+37. File name  : galileo.jpg
+	Title	   : Black Panther
+	Artist     : Galileo Galili
+	Year       : 1609
+	Details   : Galileo's first sketches of the moon after viewing it through his telescope in 1609.
+
+38. File name  : klee.jpg
+	Title	   : Moonlight
+	Artist     : Paul Klee
+	Year       : 1919
+
+39. File name  : klee-two.jpg
+	Title	   : Gartenhaus
+	Artist     : Paul Klee
+	Year       : 1929
+	Details    : A quote from the artist - "Everything vanishes around me, and works are born as if out of the void. Ripe, graphic fruits fall off. My 				hand has become the obedient instrument of a remote will."
+
+40. File name  : morrison.jpg
+	Title	   : Untitled
+	Artist     : George Morrison
+	Year       : 1919 
+
+41. File name  : merida.jpg
+	Title	   : En Tono Mayor
+	Artist     : Carlos Mérida
+	Year       : 1981
+
+42. File name  : fujita.jpg
+	Title	   : Untitled
+	Artist     : Fumio Fujita
+	Year       : 1969
+
+43. File name  : klien.jpg
+	Title	   : Abstraktion
+	Artist     : Erika Giovanna Klien
+	Year       : 1926
+
+44. File name  : klien.jpg
+	Title	   : Movement of two Heads - Conversation
+	Artist     : Erika Giovanna Klien
+	Year       : 1951
+
+45. File name  : feito.jpg
+	Title	   : Komposition 261
+	Artist     : Luis Feito
+	Year       : 1961
+
+46. File name  : lacasse.jpg
+	Title	   : Création 112
+	Artist     : Joseph Lacasse
+	Year       : 1974
+
+47. File name  : medek.jpg
+	Title	   : Décolletage
+	Artist     : Mikuláš Medek
+	Year       : 1962
+
+48. File name  : klee-three.jpg
+	Title	   : Birds Swooping Down and Arrows
+	Artist     : Paul Klee
+	Year       : 1919
+
