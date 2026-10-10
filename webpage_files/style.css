@@ -1,0 +1,765 @@
+/* ==========================================================================
+   style.css
+
+   CONTENTS
+     0. Fonts            @import + @font-face
+     1. Design tokens    colours, typefaces, widths (edit themes HERE)
+     2. Base elements    body, headings, text, links, lists, images
+     3. Page layout      #content and its layout variants
+     4. Panes            .pane-side / .pane-main / .pane-fixed(-wide)
+     5. Cards            #content.cards + .card
+     6. Teaching page    #content.teaching
+     7. Site chrome      #header, #footer
+     8. Inline styles    .accent, .tag-*, .type-*
+     9. Components       .entry, quotes, tables, arrows, tooltip, grids, patterns
+    10. Utilities
+    11. Dark theme       (disabled; kept for reference)
+
+   Cascade notes
+     - Several rules are intentionally order-dependent; they are flagged
+       with "ORDER:" below. Re-order them with care.
+     - #content is deliberately kept as an ID so that its descendant rules
+       keep their current specificity.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   0. FONTS
+   ========================================================================== */
+
+/* Body face. @import must stay the first statement in the file. */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap');
+
+/* Display face (headings). Family is "Clark"; the files are named "Clack". */
+@font-face {
+  font-family: 'Clark';
+  src: url('./fonts/Clack-Regular_otf.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Clark';
+  src: url('./fonts/Clack-LightItalic_otf.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Indic scripts. Not referenced anywhere in this file; they are meant to be
+   applied from the HTML (e.g. style="font-family: 'KohinoorDev'"). */
+@font-face {
+  font-family: 'KohinoorDev';
+  src: url('./fonts/KohinoorDevanagari.ttc') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KohinoorBong';
+  src: url('./fonts/KohinoorBangla.ttc') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ==========================================================================
+   1. DESIGN TOKENS
+   Change a colour or width here and it propagates everywhere.
+   ========================================================================== */
+
+:root {
+  /* Typefaces */
+  --font-body:    'Work Sans', sans-serif;
+  --font-display: 'Clark', 'Work Sans', sans-serif;  /* fallback added; see notes */
+
+  /* Neutrals */
+  --color-bg:         #fff;
+  --color-text:       #000;
+  --color-text-soft:  #333;   /* h1, links, header title */
+  --color-text-muted: #777;   /* header subtitle */
+  --color-hover:      #999;   /* universal hover colour */
+  --color-rule:       #ddd;   /* header / footer separators */
+  --color-rule-quote: #a5abab;/* blockquote bar */
+
+  /* Accents */
+  --color-accent:  #e87722;   /* orange */
+  --color-primary: #293585;   /* deep blue */
+  --color-muted:   #808080;   /* grey */
+  --color-slate:   #536878;   /* slate blue-grey */
+
+  /* Layout */
+  --width-page:     1100px;
+  --width-narrow:   600px;
+  --gap-columns:    50px;
+}
+
+
+/* ==========================================================================
+   2. BASE ELEMENTS
+   ========================================================================== */
+
+/* --- 2.1 Document ------------------------------------------------------- */
+
+body {
+  background: var(--color-bg);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0;
+  color: var(--color-text);
+}
+
+/* --- 2.2 Headings ------------------------------------------------------- */
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.2em;
+  margin: 0 0 0.5em 0;
+}
+
+/* ORDER: must follow h1, h2 to override its colour. */
+h1 {
+  color: var(--color-text-soft);
+}
+
+h3,
+h4,
+h5 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  color: var(--color-text);
+  line-height: 1.4em;
+  margin-top: 40px;
+}
+
+.main-title {
+  text-align: center;
+  margin: 0 auto 0;
+}
+
+/* --- 2.3 Text ----------------------------------------------------------- */
+
+p {
+  font-weight: 300;
+  line-height: 1.4em;
+  margin: 12px 0;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+/* Explicit 700: the browser default ("bolder") would only reach 400
+   from the 300 body weight. */
+strong,
+b {
+  font-weight: 700;
+}
+
+/* --- 2.4 Links ---------------------------------------------------------- */
+
+a {
+  color: var(--color-text-soft);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-hover);
+}
+
+/* --- 2.5 Lists, quotes, images ------------------------------------------ */
+
+ul,
+ol {
+  padding: 0 0 0 3em;
+}
+li {
+  line-height: 1.4em;
+  padding-top: 6px;
+}
+
+blockquote {
+  border-left: 2.5px solid var(--color-rule-quote);
+  margin: 15px 0;
+  padding: 1px 12px;
+}
+
+img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ==========================================================================
+   3. PAGE LAYOUT  —  #content
+   Default: two-column grid (narrow side pane + wider main pane).
+   Variants are applied as a class on #content, e.g. <div id="content" class="single">.
+   ========================================================================== */
+
+#content {
+  max-width: var(--width-page);
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: var(--gap-columns);
+  align-items: start;
+  justify-content: center;
+  overflow: visible;
+  position: relative;
+  z-index: 1;               /* keeps tooltips above neighbouring content */
+}
+
+/* One narrow column */
+#content.single {
+  grid-template-columns: 1fr;
+  max-width: var(--width-narrow);
+}
+
+/* One full-width column */
+#content.single-wide {
+  grid-template-columns: 1fr;
+  max-width: var(--width-page);
+}
+
+/* Page title spans every column */
+#content h1 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+#content p {
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+
+/* ==========================================================================
+   4. PANES  —  children of #content
+   ========================================================================== */
+
+/* Narrow column; images fill its width. */
+#content .pane-side {
+  padding-top: 5px;
+  text-align: left;
+}
+#content .pane-side img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Main text column. */
+#content .pane-main {
+  margin-top: 0;
+  padding-top: 0;
+}
+#content .pane-main p:first-of-type {
+  margin-top: 0;
+}
+
+/* Fixed-width pane: 500px, or 800px with -wide. Images capped at 500px. */
+#content .pane-fixed,
+#content .pane-fixed-wide {
+  padding: 0;
+  text-align: left;
+}
+#content .pane-fixed      { width: 500px; }
+#content .pane-fixed-wide { width: 800px; }
+
+#content .pane-fixed img,
+#content .pane-fixed-wide img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* ==========================================================================
+   5. CARDS  —  auto-fitting grid of boxes
+   Usage: <div id="content" class="cards"><div class="card">…</div>…</div>
+   ========================================================================== */
+
+#content.cards {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  max-width: var(--width-page);
+}
+
+.card {
+  background: var(--color-bg);
+  padding: 15px;
+}
+
+
+/* ==========================================================================
+   6. TEACHING PAGE  —  #content.teaching
+   Tight vertical rhythm for course listings.
+   ========================================================================== */
+
+#content.teaching h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#content.teaching b {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#content.teaching ul {
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#content.teaching figcaption {
+  margin: 4px 0 6px;
+}
+
+
+/* ==========================================================================
+   7. SITE CHROME  —  header & footer
+   ========================================================================== */
+
+#header,
+#footer {
+  width: 100%;
+  padding: 5px 0;
+  text-align: center;
+  font-weight: 300;
+}
+
+#header {
+  border-bottom: 1px solid var(--color-rule);
+  margin-bottom: 10px;
+}
+#header h2 {
+  color: var(--color-text-soft);
+  font-weight: 400;
+  font-size: 16pt;
+}
+#header h3 {
+  color: var(--color-text-muted);
+  font-weight: 300;
+  font-size: 12pt;
+}
+
+#footer {
+  border-top: 1px solid var(--color-rule);
+  margin-top: 80px;
+}
+
+
+/* ==========================================================================
+   8. INLINE STYLES
+   Apply as classes on <span> (or directly on <a>), e.g. <span class="accent">.
+   ========================================================================== */
+
+/* --- 8.1 Accent text (orange; grey on hover) ---------------------------- */
+
+.accent {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.accent:hover {
+  color: var(--color-hover);
+}
+
+/* White text that turns orange on hover (for dark backgrounds). */
+.accent-inverse {
+  color: #fff;
+  text-decoration: none;
+}
+.accent-inverse:hover {
+  color: var(--color-accent);
+}
+
+/* --- 8.2 Tags ------------------------------------------------------------
+   The :hover rules keep the colour fixed; on an <a> they also beat the
+   global a:hover.                                                          */
+
+.tag-primary {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+.tag-primary:hover {
+  color: var(--color-hover);
+}
+
+.tag-muted {
+  color: var(--color-muted);
+  font-weight: 300;
+  font-size: 0.95em;
+  line-height: 1.2em;
+  padding-block: 1em;
+  text-decoration: none;
+}
+.tag-muted:hover {
+  color: var(--color-muted);
+}
+
+.tag-secondary {
+  color: var(--color-slate);
+  font-weight: 400;
+  font-size: 0.95em;
+  line-height: 1em;
+  padding-block: 1em;
+  text-decoration: none;
+}
+.tag-secondary:hover {
+  color: var(--color-slate);
+}
+
+/* --- 8.3 Heading-like type styles for non-heading text ------------------ */
+
+.type-light,
+.type-medium,
+.type-bold {
+  color: var(--color-text);
+  line-height: 1.4em;
+  margin-top: 0;
+}
+.type-light  { font-family: var(--font-display); font-weight: 300; }
+.type-medium { font-weight: 500; }                 /* body face, not Clark */
+.type-bold   { font-family: var(--font-display); font-weight: 700; }
+
+
+/* ==========================================================================
+   9. COMPONENTS
+   ========================================================================== */
+
+/* --- 9.1 Blog / list entries -------------------------------------------- */
+/* ORDER: must follow the global a / a:hover rules so the colour wins. */
+
+.entry a {
+  color: #303030;
+  text-decoration: none;
+  border-bottom: 1px solid #c0c0c0;
+}
+.entry a:hover {
+  background: #e7eef8;
+}
+.entry strong {
+  font-weight: 700;
+  color: #111;
+}
+
+/* --- 9.2 Quotes --------------------------------------------------------- */
+
+.quote-author {
+  display: block;
+  text-align: right;
+  margin-top: 2px;
+  font-style: italic;
+}
+
+/* Narrower blockquote: <blockquote class="narrow"> */
+blockquote.narrow {
+  max-width: 60%;
+}
+
+/* --- 9.3 Tables ----------------------------------------------------------
+   .calendar        month-grid with tall rows
+   .table-bordered  plain bordered table, centred                           */
+
+.calendar,
+.table-bordered {
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: 100%;
+  min-width: 220px;
+  font-size: 1em;
+}
+.table-bordered {
+  margin: 0 auto;
+}
+
+.calendar th,
+.calendar td,
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid black;
+  padding: 4px 8px;
+  word-break: break-word;
+}
+
+.calendar tr                { height: 100px; }
+.calendar tr:first-child    { height: 20px; }   /* header row */
+.calendar td {
+  width: 110px;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* --- 9.4 Arrows (for timeline cells) -------------------------------------
+   Usage: <td class="arrow-cell"><div class="arrow arrow-right"></div></td>
+
+   ORDER: .arrow must come after .arrow-left/.arrow-right. When combined,
+   .arrow overrides them with a 3px grey shaft; used alone, -left/-right
+   give a 1px black shaft. The arrowheads are always grey.                  */
+
+.arrow-cell {
+  position: relative;
+}
+
+.arrow,
+.arrow-left,
+.arrow-right {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.arrow-left,
+.arrow-right {
+  height: 1px;
+  background-color: black;
+}
+.arrow {
+  height: 3px;
+  background-color: grey;
+}
+
+/* Arrowheads */
+.arrow-left::after,
+.arrow-right::after {
+  content: '';
+  position: absolute;
+  top: 70%;
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid grey;
+  border-right: 3px solid grey;
+}
+.arrow-right::after {
+  right: 0;
+  transform: translateY(-50%) rotate(45deg);
+}
+.arrow-left::after {
+  left: 0;
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+/* --- 9.5 Tooltip ---------------------------------------------------------
+   <span class="tooltip">text<span class="tooltiptext">hint</span></span>   */
+
+.tooltip {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted #555;
+  overflow: visible;
+  z-index: 1;
+}
+
+.tooltip .tooltiptext {
+  position: absolute;
+  z-index: 9999;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 200px;
+  max-width: 85vw;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--color-text-soft);
+  color: var(--color-bg);
+  font-size: 0.9rem;
+  text-align: center;
+  word-break: break-word;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 0.9;
+}
+
+/* --- 9.6 2×2 grid box --------------------------------------------------- */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.grid-item {
+  border: 1px solid #ccc;
+  padding: 20px;
+  overflow-y: auto;
+}
+.section-title {
+  margin-top: 0;
+}
+
+/* --- 9.7 Background patterns -------------------------------------------- */
+
+.line-pattern {
+  background-image: linear-gradient(
+    45deg,
+    #f0f0f0 25%,
+    transparent 25%,
+    transparent 50%,
+    #f0f0f0 50%,
+    #f0f0f0 75%,
+    transparent 75%,
+    transparent 100%
+  );
+  background-size: 60px 60px;
+}
+
+.checkered-pattern {
+  background-image:
+    linear-gradient(45deg,  #e6e6e6 25%, transparent 25%),
+    linear-gradient(-45deg, #e6e6e6 25%, transparent 25%),
+    linear-gradient(45deg,  transparent 75%, #e6e6e6 75%),
+    linear-gradient(-45deg, transparent 75%, #e6e6e6 75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 30px, 30px -30px, -30px 0;
+}
+
+
+/* ==========================================================================
+   10. UTILITIES
+   ========================================================================== */
+
+.bold-text {
+  font-weight: 700;
+}
+.indented {
+  display: inline-block;
+  padding-left: 20px;
+}
+.course-item {
+  padding-left: 20px;
+  margin: 0;
+}
+.centered {
+  display: inline-block;
+  text-align: center;
+}
+
+
+/* ==========================================================================
+   11. DARK THEME  (DISABLED)
+   Kept for reference. To enable, delete the opening and closing comment
+   markers around the block. Not re-tested after the restructure. Known gap
+   (also true of the original): .card keeps its light background.
+   ========================================================================== */
+
+/*
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  h1, h2, h3, h4, h5,
+  .main-title,
+  #header h2 {
+    color: #f0f0f0;
+  }
+
+  h1 a, h2 a, h3 a, h4 a, h5 a {
+    text-decoration: none;
+    border-bottom: none;
+  }
+  h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover {
+    color: #999;
+    border-bottom: none;
+  }
+
+  #content.teaching figcaption {
+    color: #e0e0e0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted #888888;
+  }
+  a:hover {
+    color: #999;
+    border-bottom-color: #999;
+  }
+
+  .entry a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid #666666;
+  }
+  .entry a:hover {
+    background: #333333;
+    border-bottom-color: transparent;
+  }
+  .entry strong {
+    color: #f0f0f0;
+  }
+
+  #footer a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: none;
+  }
+  #footer a:hover {
+    color: #999;
+  }
+
+  blockquote {
+    border-left: 1px solid #777;
+  }
+
+  #content .pane-side img {
+    filter: brightness(0.8) contrast(1.1) grayscale(0.1);
+  }
+
+  .calendar,
+  .table-bordered,
+  .calendar th, .calendar td,
+  .table-bordered th, .table-bordered td {
+    border: 1px solid #4a4a4a;
+  }
+
+  .line-pattern {
+    background-image: linear-gradient(
+      45deg,
+      #333333 25%,
+      transparent 25%,
+      transparent 50%,
+      #333333 50%,
+      #333333 75%,
+      transparent 75%,
+      transparent 100%
+    );
+  }
+  .checkered-pattern {
+    background-image:
+      linear-gradient(45deg,  #333333 25%, transparent 25%),
+      linear-gradient(-45deg, #333333 25%, transparent 25%),
+      linear-gradient(45deg,  transparent 75%, #333333 75%),
+      linear-gradient(-45deg, transparent 75%, #333333 75%);
+  }
+
+  .tooltip .tooltiptext {
+    background-color: #f0f0f0;
+    color: #1a1a1a;
+  }
+}
+*/
