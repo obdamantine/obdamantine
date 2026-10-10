@@ -1,0 +1,172 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Shubhajit Dey</title>
+
+    <!-- Site stylesheet -->
+    <link rel="stylesheet" href="webpage_files/style.css" type="text/css" media="screen" />
+
+    <!-- Page-specific styles (tables etc.) -->
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 0;
+        text-align: left;
+        font-weight: 300;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      td:last-child {
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!--<div id="header">
+      <p>
+        <a href="index.html"> home </a> &emsp; &emsp;
+        <a href="research cover.html"> research </a> &emsp; &emsp;
+        <a href="teaching.html"> teaching </a> &emsp; &emsp;
+        <a href="about.html"> bio </a> &emsp; &emsp;
+        <a href="resources.html"> resources </a> &emsp; &emsp;
+        <a href="blogs gleanings.html"> blogs </a>
+      </p>
+    </div>-->
+
+    <!-- Page title and artwork -->
+    <div id="content" class="single">
+      <h1>
+        <strong>Research</strong>
+      </h1>
+
+      <!-- Artwork and caption -->
+      <div style="text-align: center">
+        <img
+          src="webpage_files/artwork/bendre.jpg"
+          class="center"
+        />
+        <figcaption>
+          <font size="-1">NS Bendre, <em>Cosmos in the Making</em> (1963)</font>
+        </figcaption>
+
+        <br><br><br>
+        <!-- Section sub-navigation (current tab in bold) -->
+        <div style="border: 1px solid #ddd; padding: 02px;">
+          <a href="research cover.html"><strong> math </strong></a> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+          <a href="404.html"> lex </a> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+          <a href="404.html"> group </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Main content (two-column grid) -->
+    <div id="content">
+
+      <!-- Fixed-width pane (500px) -->
+      <div class="pane-fixed">
+        <h2><strong>Research Availability</strong></h2>
+
+        <p>
+          My proclivity in applied math centrifuges around computational analysis. My research interests lie in applied analysis, particularly in the areas of approximation theory, numerical analysis on differential equations and the theory of continuous optimisation. Specifics on topics I actively follow are mentioned as follows :<br></p>
+        <div style="border: 0.5px solid black; padding: 5px;">
+          <span class="type-light"><strong>Approximation theory & numerical analysis on ODEs/PDEs </strong></span><br>
+          I have grown interests towards the theory of convergence of orthogonal expansions crucial from the persepective of developing efficient numerical/computational schemes for solving DEs. In particular, I have an inclination towards numerical analysis concerning spectral Fourier-Chebyshev methods.
+        </div>
+        <br>
+        <div style="border: 0.5px solid black; padding: 5px;">
+          <span class="type-light"><strong>Spectral method aided deep learning for ODEs/PDEs </strong></span><br>
+          Work on solving PDEs through neural networks was recently made popular in the form of Physics-informed neural networks (PINNs) and neural operators. There has been a lot of progress in accelerating neural PDE solvers involving variants of PINNs, particularly using transfer learning. However, these methods rely on backpropagation and thus necessitate computing the derivatives of the given PDE for each forward pass, rendering them computationally intensive, even for simple PDEs, and often resulting in limited approximation accuracy. Spectral methods for solving PDEs promise fast convergence with a small number of basis functions. Recent progresses in research promises deep learning based spectral method in which hierarchical spatial basis functions are extracted from a trained Deep Operator Nets (DeepONets) and employed in a spectral method to solve the PDE.
+        </div>
+        <br>
+        <div style="border: 0.5px solid black; padding: 5px;">
+          <span class="type-light"><strong>Optimisation in continuous domains </strong></span><br>
+          Motivated from the exposure during my MITACS project and my formal training to earn a minor, I have started to explore the field of optimisation over continuous domains which are crucial from the perspective of deep learning. Particularly, I have dedicated my attention towards optimisation over manifolds and their applications in developing efficient derivative algorithms of gradient descent optimisers.
+        </div>
+        <br>
+
+        <p>If you are a researcher with aligned interests in these domains and believe there exists a non-zero probability for a collaboration, I would be delighted to connect and discuss potential projects.</p>
+        
+      </div>
+
+      <!-- Main pane -->
+      <div class="pane-main">
+        <h2><strong>MS Thesis</strong></h2>
+        <h3>THEORETICAL & COMPUTATIONAL CONSIDERATIONS OF STURM-LIOUVILLE SYSTEMS</h3>
+        <!--<span class="type-light"><strong>THEORETICAL & COMPUTATIONAL CONSIDERATIONS OF STURM-LIOUVILLE SYSTEMS</strong></span><br><br>-->
+
+        <strong>Roadmap. </strong>Fourier series &#8594; analysis on eigenfunctions & eigenvalues &#8594; generalisation of Fourier series to SL series &#8594; numerical analysis on approximation schemes<br><br>
+
+        <!--<p>
+          <strong>Crux. </strong>This thesis examines how to approximate functions by representing them as infinite series. The work begins with Fourier series (infinite series made of multi-angular sinusoidals) and generalizes them through Sturm-Liouville theory, where certain types of eigenfunctions form the building blocks of function approximation instead of just sinusoidals. Finally, a significant portion of the thesis addresses practical computations, in particular, how to quickly evaluate and calculate the coefficients in these series.
+        </p>-->
+
+        <table>
+          <tr>
+            <td><strong>Supervisors. </strong></td>
+            <td>   </td>
+            <td> Dr. Anandateertha G Mangasuli, Dr. Ambuj Pandey</td>
+          </tr>
+          <tr>
+            <td><strong>Institute. </strong></td>
+            <td> &emsp;&ensp; </td>
+            <td>Indian Institute of Science Education & Research, Bhopal</td>
+          </tr>
+          <tr>
+            <td><strong>Year. </strong></td>
+            <td>   </td>
+            <td>2024</td>
+          </tr>
+          <tr>
+            <td><strong>Abstract. </strong></td>
+            <td>   </td>
+            <td><a href="research/MS THESIS Abstract.pdf" target="_blank" class="accent">pdf</a></td>
+          </tr>
+          <tr>
+            <td><strong>Full Version. </strong></td>
+            <td>   </td>
+            <td><a href="research/MS Thesis.pdf" target="_blank" class="accent">pdf</a>, <a href="https://github.com/Shubhajit412/THEORETICAL-AND-COMPUTATIONAL-CONSIDERATIONS-OF-STURM-LIOUVILLE-SYSTEMS" target="_blank" class="accent">code</a></td>
+          </tr>
+          <tr>
+            <td><strong>BibTeX. </strong></td>
+            <td>   </td>
+            <td><a href="temp/MS-Thesis.bib" target="_blank" class="accent">bib</a></td>
+          </tr>
+        </table>
+
+        <br><br><br>
+
+        <h2><strong>Publications & Pre-Prints</strong></h2>
+
+        &#10033; <em>This section is currently under construction. Please check back soon.</em>
+      </div>
+    </div>
+
+    <!-- Footer: site navigation -->
+    <div id="footer">
+      <!--<p>
+        <a href="index.html"> home </a> -
+        <a href="research cover.html"> research </a> -
+        <a href="teaching.html"> teaching </a> -
+        <a href="about.html"> bio </a> -
+        <a href="resources.html"> resources </a> -
+        <a href="blogs gleanings.html"> blogs </a>
+      </p>-->
+      <p>
+        <a href="index.html"> home </a> &emsp; &emsp;
+        <a href="research cover.html"> research </a> &emsp; &emsp;
+        <a href="teaching.html"> teaching </a> &emsp; &emsp;
+        <a href="about.html"> bio </a> &emsp; &emsp;
+        <a href="resources.html"> resources </a> &emsp; &emsp;
+        <a href="blogs gleanings.html"> blogs<!--<sup><font color="#722F37">&#9679;</font></sup>--> </a>
+      </p>
+    </div>
+
+  </body>
+</html>
