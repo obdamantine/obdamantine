@@ -1,0 +1,269 @@
+  <html>
+    <head>
+      <title>Blog One</title>
+
+      <link
+        rel="stylesheet"
+        href="webpage_files/style.css"
+        type="text/css"
+        media="screen"
+      />
+
+      <!-- ChatGPT Modifications for tables etc. -->
+        <style>
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+            }
+            th, td {
+                  border-bottom: collapse;
+                  padding: 1px;
+                  text-align: left;
+                  font-weight: 300;
+            }
+            th {
+                  background-color: #f2f2f2;
+            }
+            td:last-child {
+                  text-align: right;
+            }
+        </style>
+    </head>
+
+    <body>
+
+    <div id="content" class="mingle-wide">
+
+      <div class="col">
+        <h1 id="top" style="text-align: left">
+          <strong>Friendly advice on graduate school applications for doctoral admissions</strong>
+        </h1>
+
+        <div style="text-align: center">
+          <div style="border: 0.5px solid black; padding: 05px;">
+            01 February, 2025
+          </div>  
+          <br><br>
+          <img
+            src="webpage_files/artwork/motherwell.png"
+            class="center"
+          />
+          <figcaption>
+            <font size="-1">Robert Motherwell, <em>Reconciliation Elegy</em> (1978)</font>
+          </figcaption>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div id="stickyNav" style="border: 0.5px solid black; padding: 10px;"> 
+          <t4><strong>Contents</strong></t4><br>
+          <a href="#cv">1. Curriculum Vitae - CV</a><br>
+          <a href="#sop">2. Statement of Purpose - SoP</a><br>
+          <a href="#lor">3. Letter of Recommendation - LoR</a><br>
+          <a href="#ce">4. Cold Emails</a><br>
+          <a href="#ar">5. Additional Resources</a><br><br> 
+          <t4><strong>Navigation</strong></t4> : <a href="#top">back to top</a>
+        </div>
+
+        <script>
+          var nav = document.getElementById('stickyNav');
+          var navOffset = nav.offsetTop;
+
+          window.addEventListener('scroll', function() {
+              if (window.pageYOffset >= navOffset) {
+                  nav.style.position = 'fixed';
+                  nav.style.top = '10';
+                  nav.style.width = '550' + 'px'; // Preserve width
+              } else {
+                  nav.style.position = 'static';
+              }
+          });
+        </script>
+
+        <!--<div style="border: 0.5px solid black; padding: 25px; position: sticky; top: 0;">
+          <t4><strong>Contents</strong></t4><br>
+            <a href="#cv">1. Curriculum Vitae - CV</a><br>
+            <a href="#sop">2. Statement of Purpose - SoP</a><br>
+            <a href="#lor">3. Letter of Recommendation - LoR</a><br>
+            <a href="#ar">4. Additional Resources</a><br><br>
+
+          <t4><strong>Navigation</strong></t4> : <a href="#top">back to top</a>
+        </div>-->
+      </div>
+
+      <div class="col">
+        <blockquote>
+          The contents of this document are compiled purely for academic purposes and intended to help graduate school applicants seeking doctoral admissions. Nothing written here is 'correct' in any absolute sense and is based on my experiences as an applicant.
+        </blockquote>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <h2 id="cv">Curriculum Vitae - CV</h2>
+        
+        Your CV represents your accomplishments and experience as an academic and helps to establish your professional image. Most importantly, follow the conventions of your field! Different academic disciplines have different standards and expectations, especially in the order of categories. Check out CVs from recent graduates of your department, and others in your field, to ensure you are following your field's norms.
+        
+        <ol>
+          <li>There is no single best format. Refer to samples for ideas, but craft your CV to best reflect you and your unique accomplishments.</li>
+
+          <li>As far as text-styling is concerned, do not use more than three colors in the entire document, a rule-of-thumb is : one for the general body, one for tag texts/thematic phrase texts which require subtle attention like venues, institute names etc. and lastly one for links.</li>
+
+          <li>Stick to a common font, such as Times New Roman, using a font size of 10 to 12 pt. Use highlighting judiciously, favoring bold, ALL CAPS, and white space to create a crisp professional style. Avoid text boxes, underlining and shading; italics may be used in moderation.</li>
+
+          <li>The resultant CV should not look cramped with information. A good practice which often proves to be very helpful is to first make a master Resume with all the informations and details included, with proper styles/formatting. And then edit it to get it trimmed to the appropriate size version.</li>
+
+          <li>Keep locations, dates and less important information on the right side of the page. The left side should have important details like university, degree, job title, etc.</li>
+
+          <li>Be strategic in how you order and entitle your categories. The most important informa- tion should be on the first page. Within each category, list items in reverse chronological order.</li>
+
+          <li>A CV created using LaTeX, almost in all cases, appears more professional than the same CV made using any other text formatting software. <a href="https://www.overleaf.com" target="_blank"><sa>Overleaf</sa></a> has an abundant collection of tex templates of CVs, but for applicants in STEM (especially for math majors) it is recommended to come up with personal tex projects. The .tex preambles in <a href="https://github.com/Shubhajit412/SHUBHO-s_LATEX_CLUB" target="_blank"><sa>this</sa></a> repository might come handy!</li>
+
+          <li>It is okay if you do not have significant projects and experiences to fill up your CV, but do not fill it with irrelevant information or out-of-context jargon. <strong>Do not include any material in your CV which is untrue!</strong> Furthermore, it is equally important to not put any experience or information which cannot be verified or has absolutely no robust documentation. Your CV may get no more than thirty seconds of the reader's attention, thus it is not prudent to present points leaving the reader with no option other than believing you at face value.</li>
+
+          <li>Although it is not official, most academic committees use an algorithmic setup to cut CVs and resumes to two pages per document. To be on a safer side, do not make your CV to be of more than 2 pages. Pair this point with point 4. mentioned above.</li>
+
+          <li>A pattern which I have seen in almost all the professional CVs is the mention of relevant referees along with their contact details. It is an unwritten non-negotiable rule in academia to compose resumes.</li>
+
+          <li>Do not use personal pronouns (such as I) and avoid full sentences. Abbreviate in a sensible manner and use appropriate action verbs while lisiting details. Most importantly, use a narrative style of writing.</li>
+
+          <li>Personalisation of the details presented in your CV with respect to the
+            <ul>
+              <li>position you are applying for;</li>
+              <li>the lab/research group you intend to join;</li>
+              <li>the researcher or the professor you wish to work under</li>
+            </ul>
+          is a subtle yet effective advantage you can have. Do a background check of the department you are applying to and craft your CV accordingly. The point to be noted is that, your CV should subtly answer why the department/the research group or the professor should hire you? Tailor your resume to the type of position you are seeking. This does not mean that all of your experiences must relate directly, but your CV should reflect the types of skills the employer would value.</li>       
+        </ol>
+
+        <p>
+          <strong>Sample.</strong> The full-professional resume/the master CV, which I have looks like <a href="https://eigeps.xyz/home/Resume_ver25.pdf" target="_blank"><sa>this pdf</sa></a>, and can only be accessed if someone visits my webpage. It is meant for a general audience in the internet. However, one of the targeted CVs which I used during my grad school applications back in 2025 is <a href="https://eigeps.xyz/home/CV_ver25.pdf" target="_blank"><sa>this pdf</sa></a>. Please feel free to compare them and take a note of all the differences they have.
+        </p>
+      
+        <h2 id="sop">Statement of Purpose - SoP</h2>
+
+        Your Academic Statement of Purpose or SOP is a writing sample and a part of the screening process. By putting your best foot forward, you can increase your chances of being interviewed. A good way to create a response-producing SOP is to highlight your skills or experiences that are most applicable to the job or industry and to tailor the letter to the specific organization to which you are applying.<br><br>
+
+        Note that each document in your application should stand alone, telling the same story in a different way. For example, the CV lists all of your academic accomplishments, while the cover letter will emphasize the most important and relevant parts of your background. The letter should not read as a CV in prose, and should summarize and encapsulate the points you expand upon in your research statement and teaching statement. Allow your professional voice to shine through in your writing to express your sincere enthusiasm for your work and the confidence that you are the best candidate for the particular position, department, or institution.<br><br>
+
+        To state in a much minimalistic way, the document shall essentially have three parts answer to the following :
+        <ul>
+          <li>Why are you writing this document? State about your candidature for the position.</li>
+          <li>What is your background? How does your background make you a good fit for the position?</li>
+          <li>What value would you bring to the position? State your plausible future plans.</li>
+        </ul>
+
+        Some important technical tips to consider are as follows :
+
+        <ol>
+          <li>First and foremost, write like a child and edit like a scientist! Begin with telling the story/fact about your academic journey which you otherwise are afraid of sharing. At this stage, do not bother about the size the content volume.</li>
+
+          <li>Continuing from the above, edit your essay with keeping the most precise and the most creative outlook in your mind. An essay devoid of grammatical, punctuation and spelling errors is the bare minimum!</li>
+
+          <li>Altough it is not official, but most of the academic committees have algorithmic setup to cut SOPs and Cover Letters to 2 pages of a single document which follows a 11pt font size or above. To be on a safer side, do not make your SOP to be of more than two pages and use at least an 11pt font size. Use a standard font prevelant for official purposes & do not use Comic Sans!</li>
+
+          <li>Try to use a narrative style of writing tailored for the research group you are intending to join. Include graceful transitions between paragraphs, something that is often difficult to achieve.</li>
+
+          <li>Put yourself in the reader's shoes. What can you write that will convince the reader that you are ready and able to do the job? Do not use repetitive words.</li>
+
+          <li>Reference skills or experiences from the research descriptions of your target research group/lab and professor. Additionally, draw connections to your credentials mentioned in your CV.</li>
+
+          <li>While you may be tempted to use a generative AI tool to compose your letter, be deliberate and specifc with your prompts. Remember to edit the results carefully and add your own voice/style to the letter. It is notable that contemporary generative AI systems exhibit a poor balance in word usage, in particular, words like 'complex' and 'creative' will directly imply that you have used AI mindlessly, even in cases when you have not! That is sad, but true.</li>
+
+          <li>One of the most underrated facts in general as a student is that, it is not just your strengths which give shape to your academic identity. Rather, it is the unique blend of your strengths and weaknesses which makes your identity standout. A feature of advantage is to include and describe how you manage when your academic/ research plans go south. How do you overcome your limitations in situations of adversity?</li>
+
+          <li>Avoid flowery language. Remember that, despite several parts/requirements in an application, your SOP remains to be a very important part of it. Often times, it is the first and the single chance for you to present your academic self to the recruiting entity. You never get a second chance to make a first impression!</li>
+
+        </ol>
+
+        <h2 id="lor">Letter of Recommendation - LoR</h2>
+
+        <ol>
+          <li>The crux of any LOR is to support your candidancy and provide clarity on your ability to undertake advanced studies in the intended area of interest. It is not prudent to aim that your referee writes things about which can be fetched from your other documents like transcripts. For example, you would not want an LOR mentioning you did/do your assignments and homeworks on time OR you performed well in a particular course in college. Ideally, your referee must be able to describe your intrinsic academic qualities/details which cannot be fetched otherwise. For example, how you tackle challenging problems, or the quality of research aptitude in general. Hence, you should prioritise referees who have supervised you in projects, thesis or multiple thematic elective yet relevant courseworks instead of just a single madatory course from the curriculum.</li>
+
+          <li>The requirement of LORs is an inevitable component of your grad school applications. Furthermore, in many places LORs are considered to be an important criteria of competency, rather than a minimum eligibility criteria. I have personal experience of referees being unprofessional while writing LORs, even when situations where dire for me. Hence, use all your discretion before selecting your referees, and not after the job is done.</li>
+
+          <li>You might consider describing the project/programme or the works of target research group to your referees in order to aid them. However, do not share your exact SOP for this purpose.</li>
+
+          <li>It is your responsibility, and yours alone, to keep track of application deadlines. With- out the minimum number of LORs submitted within the appropriate deadlines, your application would be considered incomplete and would not be processed. Hence, reach out to your referees well before deadlines, giving them sufficient time to write fruitful LORs.</li>
+        </ol>
+
+        <h2 id="ce">Cold Emails</h2>
+      
+        Cold emailing potential PhD advisors is often the first direct contact you will have with faculty members who might supervise your doctoral research. A well-crafted email can open doors, while a poorly written one can close them before you even apply. Unlike your SOP, which addresses a committee, your email reaches a single person who is likely receiving dozens of similar messages weekly. Your goal is not to impress with verbosity but to demonstrate genuine interest, preparedness, and fit.
+
+        <ol>
+          <li>Research before you write. Do not send generic emails to multiple professors with only the name changed. Read at least three recent publications from the professor's research group, understand their active projects, and identify where your interests genuinely align. If you cannot articulate a specific connection to their work, do not email them.</li>
+
+          <li>Keep it concise. Aim for 150-250 words maximum. Professors are busy; they will not read a lengthy narrative. Your email should be scannable in under 60 seconds. If you cannot convey your main points in three short paragraphs, revise until you can.</li>
+
+          <li>Structure your email with precision. A minimalistic yet effective framework is :
+            <ul>
+              <li><strong>Opening :</strong> State your purpose clearly (seeking PhD position for Fall 20XX).</li>
+              <li><strong>Body :</strong> Mention your current position/degree, one or two relevant research experiences, and specific connection to their work.</li>
+              <li><strong>Closing :</strong> Express genuine interest, mention you are happy to provide additional materials, and thank them for their time.</li>
+            </ul>
+          </li>
+
+          <li>Do not ask if they are accepting students in the body of the email. This information is usually available on department websites or faculty pages. If you cannot find it, you may ask at the end, but only after demonstrating your research fit. Asking this question first signals you have not done your homework.</li>
+
+          <li>Attach a targeted CV, but do not attach your full SOP or research statement unless explicitly requested. Your email itself should be self-contained; the CV is supplementary. Name your attachment professionally : "LastName_FirstName_CV.pdf" not "Resume_final_v3.pdf" or "myCV.docx".</li>
+
+          <li>Use a professional email address. If you are still using an undergraduate email or a personal address like "mathgenius2024@gmail.com", create a simple professional one : firstname.lastname@domain or similar. Your institutional email is ideal if you have one.</li>
+
+          <li>Subject line matters. Use clear, specific subject lines: "PhD Inquiry - Fall 2026 (Applied Analysis)" or "Prospective PhD Student - Spectral Methods Background". Avoid vague subjects like "Question" or "PhD Program" or overly casual ones.</li>
+
+          <li>Do not oversell yourself, but do not undersell either. Phrases like "I am extremely passionate" or "I would be honored to work under your esteemed guidance" come across as insincere. Instead, be direct : "I am interested in pursuing doctoral research in spectral methods, particularly applications to elliptic PDEs." Let your specific knowledge of their work demonstrate your genuine interest.</li>
+
+          <li>Mention any connection or context if applicable. Did you attend their seminar talk? Did a mutual colleague suggest you reach out? Were you impressed by a specific paper? These details help your email stand out, but only if they are truthful. Do not fabricate connections.</li>
+
+          <li>Follow up strategically. If you do not receive a response within 10-14 days, a polite follow-up is acceptable. Keep it brief : "I am writing to follow up on my email from [date] regarding PhD opportunities in your research group." Do not follow up more than once. No response often means no interest, and persistence beyond a single follow-up can be perceived as pushy.</li>
+
+          <li>Timing matters. Avoid emailing during obvious busy periods : right before major conferences, during exam weeks (if you know the academic calendar), or late December/early January. Mid-semester periods (September-October or February-March) tend to be better.</li>
+
+          <li>Proofread obsessively. A single typo in a short email is more damaging than in a two-page SOP. Use proper grammar, avoid contractions, and check that you have spelled the professor's name correctly. Addressing "Dr. Smith" as "Professor Smyth" will immediately disqualify you.</li>
+        </ol>
+
+        <strong>Tip.</strong> If the professor responds positively and asks for more materials, respond within 24-48 hours. Have your SOP, CV, and any relevant writing samples ready to send immediately. A delayed response to their interest signals poor time management or lack of serious intent. Conversely, if they decline or indicate they are not taking students, respond gracefully with thanks. Academia is a small world, and the person who cannot supervise you today might recommend you to a colleague or serve on a hiring committee years later.
+        <br><br>
+
+        Over the years, I have accumulated the following <strong>DO NOTs</strong> and common mistakes to avoid while constructing a cold email. Following are some errors that consistently harm applicants :
+
+        <ul>
+          <li>Starting with "I hope this email finds you well" or similar pleasantries. It is unnecessary and wastes the reader's time.</li>
+          <li>Writing in the third person about yourself ("The applicant has strong computational skills"). This is bizarre and unprofessional.</li>
+          <li>Asking the target professor to "guide you" or "mentor you" before you have even been admitted. You are applying for a position, not seeking a personal favor.</li>
+          <li>Including irrelevant personal information. Your hobbies, your inspiration from childhood, your financial situation - none of this belongs in a cold email.</li>
+          <li>Expressing desperate urgency ("I must start my PhD this year"). I understand that sometimes, careers timestamp situations tends to become tense but desperation is not attractive to potential advisors.</li>
+          <li>Using overly formal or archaic language ("I humbly beseech your consideration"). Write professionally, not like a Victorian novel.</li>
+        </ul>  
+
+        <strong>A Final Note.</strong> Not every professor checks their email regularly, and not every professor responds to cold emails at all. Some departments discourage direct faculty contact before formal applications. Do your research on departmental norms. If a professor does not respond, it is not necessarily a reflection on you or your qualifications. Apply through the formal channels regardless, and let your application speak for itself.
+        <br><br>
+
+        <h2 id="ar">Additional Resources</h2>
+
+        The guidance presented in this document draws primarily from my personal experiences as a graduate school applicant. However, foundational insights were gathered from seniors at IISERB and various programmes conducted by the Student Development Council, IISERB. If you are a current undergraduate at IISERB, I strongly recommend reaching out to your seniors for personalized advice tailored to your specific circumstances. Direct mentorship often proves more valuable than generic written guidance.
+        <br><br>
+
+        I am particularly grateful to Sreepadmanabh M <a href="https://www.sreepadmanabh.com" target="_blank"><sa>[webpage]</sa></a>.
+        Apart from being the former SAC President at IISER Bhopal he was also a super helpful senior, whose mentorship and guidance on graduate applications proved invaluable during my own application process.
+        <br><br>
+
+        Over and above the contents presented so far, please consider refering the following resources to get further help!
+
+        <ul>
+          <li>Undergraduate Resource Series, Mignone Center for Career Success, Harvard University Faculty of Arts & Sciences.
+              <a href="https://gws.wisc.edu/wp-content/uploads/sites/249/2023/10/College-resume-and-cover-letter-4.pdf" target="_blank"><sa>[pdf]</sa></a></li>
+
+          <li>Graduate Student Information Services, Office of Career Services, Harvard University.</li>
+        </ul>
+      
+    </div>
+  </div>
+
+    <!--<center><a href="#top">back to top</a></center>
+    <div id="footer">
+        <p>
+          <a href="#top">back to top</a> --- 
+          <a href="blogs.html"> back to blogs </a>
+        </p>
+      </div>-->
+  </body>
+</html>
